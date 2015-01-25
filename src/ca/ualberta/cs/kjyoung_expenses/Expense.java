@@ -1,14 +1,18 @@
 package ca.ualberta.cs.kjyoung_expenses;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Expense {
-	public Date date;
-	public String category;
-	public String description;
-	public BigDecimal amount;
-	public String currency;
+	private Date date;
+	private String category;
+	private String description;
+	private BigDecimal amount;
+	private String currency;
+	private static ArrayList <String> currencies;
+	private static ArrayList <String> categories;
+	
 	public Date getDate() {
 		return date;
 	}
@@ -38,6 +42,18 @@ public class Expense {
 	}
 	public void setCurrency(String currency) {
 		this.currency = currency;
+	}
+	public static ArrayList<String> getCurrencies() {
+		return currencies;
+	}
+	public static void setCurrencies(ArrayList<String> currencies) {
+		Expense.currencies = currencies;
+	}
+	public static ArrayList<String> getCategories() {
+		return categories;
+	}
+	public static void setCategories(ArrayList<String> categories) {
+		Expense.categories = categories;
 	}
 	
 }

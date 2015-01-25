@@ -22,6 +22,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ExpensesListActivity"
+            android:label="@string/title_activity_expenses_list"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ca.ualberta.cs.kjyoung_expenses.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ExpenseEditActivity"
+            android:label="@string/title_activity_expense_edit"
+            android:parentActivityName=".ExpensesListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ExpensesListActivity" />
+        </activity>
+        <activity
+            android:name=".NewClaimActivity"
+            android:label="@string/title_activity_new_claim"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
     </application>
 
 </manifest>
