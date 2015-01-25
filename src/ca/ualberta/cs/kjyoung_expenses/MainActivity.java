@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void addClaim(View view){
-		Intent intent = new Intent(this, NewClaimActivity.class);
+		Intent intent = new Intent(this, EditClaimActivity.class);
 		startActivity(intent);	
 	}
 	

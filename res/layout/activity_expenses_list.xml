@@ -13,18 +13,17 @@
         android:id="@+id/expensesList"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/addExpenseButton"
+        android:layout_above="@+id/claimName"
+        android:layout_below="@+id/deleteExpensesButton"
         android:scrollbars="vertical" >
-
     </ListView>
 
     <Button
         android:id="@+id/addExpenseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:text="@string/add_expense" />
 
@@ -37,14 +36,63 @@
         android:layout_alignParentTop="true"
         android:text="@string/delete_expenses" />
 
-    <TextView
-        android:id="@+id/claimName"
+    <Button
+        android:id="@+id/editClaimButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/deleteExpensesButton"
-        android:layout_alignBottom="@+id/deleteExpensesButton"
+        android:layout_above="@+id/expensesList"
         android:layout_centerHorizontal="true"
-        android:text="Claim Name"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="@string/edit" />
+
+	<TextView
+	    android:id="@+id/from"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentStart="true"
+	    android:text="From: "
+	    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<TextView
+	    android:id="@+id/startDate"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/from"
+	    android:layout_toRightOf="@+id/from"
+	    android:layout_toEndOf="@id/from"
+	    android:text="Jan 1"
+	    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<TextView
+	    android:id="@+id/to"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/startDate"
+	    android:layout_toRightOf="@id/startDate"
+	    android:layout_toEndOf="@id/startDate"
+	    android:text="To: "
+	    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<TextView
+	    android:id="@+id/endDate"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/to"
+	    android:layout_alignParentEnd="true"
+	    android:layout_alignParentRight="true"
+	    android:layout_toRightOf="@+id/to"
+	    android:layout_toEndOf="@id/to"
+	    android:text="Jan 10"
+	    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<TextView
+	    android:id="@+id/claimName"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/startDate"
+	    android:layout_centerHorizontal="true"
+	    android:text="Claim Name"
+	    android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

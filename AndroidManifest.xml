@@ -39,7 +39,7 @@
                 android:value="ExpensesListActivity" />
         </activity>
         <activity
-            android:name=".NewClaimActivity"
+            android:name=".EditClaimActivity"
             android:label="@string/title_activity_new_claim"
             android:parentActivityName=".MainActivity" >
             <meta-data

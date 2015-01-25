@@ -12,40 +12,40 @@
         android:id="@+id/travelClaims"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/addClaimButton"
-        android:layout_alignBottom="@+id/addClaimButton"
+        android:layout_alignBaseline="@+id/deleteClaimsButton"
+        android:layout_alignBottom="@+id/deleteClaimsButton"
         android:layout_centerHorizontal="true"
         android:text="@string/travel_claims"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/addClaimButton"
+        android:id="@+id/deleteClaimsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="14dp"
-        android:text="@string/add_claim"
-        android:onClick="addClaim" />
+        android:text="@string/delete_claims"/>
 
     <ListView
         android:id="@+id/claimsList"
         android:layout_width="fill_parent"
         android:layout_height="263dp"
-        android:layout_alignLeft="@+id/addClaimButton"
+        android:layout_alignLeft="@+id/deleteClaimsButton"
         android:layout_alignParentBottom="true"
-        android:layout_below="@+id/addClaimButton"
+        android:layout_below="@+id/deleteClaimsButton"
         android:layout_weight="1"
         android:scrollbars="vertical" >
 
     </ListView>
 
     <Button
-        android:id="@+id/deleteClaimsButton"
+        android:id="@+id/addClaimButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/claimsList"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="@string/delete_claims" />
+        android:text="@string/add_claim" 
+        android:onClick="addClaim" />
 
 </RelativeLayout>
