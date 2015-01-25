@@ -40,7 +40,6 @@ import android.widget.ListView;
 
 public class MainActivity extends Activity {
 	private ArrayList <TravelClaim> claims;
-	private static final String FILENAME = "file.sav";
 	private ListView claimsList;
 	private ArrayAdapter<TravelClaim> claimAdapter;
 
@@ -67,47 +66,6 @@ public class MainActivity extends Activity {
 	public void addClaim(View view){
 		Intent intent = new Intent(this, EditClaimActivity.class);
 		startActivity(intent);	
-	}
-	
-	
-	//Taken from https://github.com/joshua2ua/lonelyTwitter on Jan 24 2015 and modified
-	private ArrayList<TravelClaim> loadFromFile() {
-		Gson gson = new Gson();
-		ArrayList<TravelClaim> claims = new ArrayList<TravelClaim>();
-		try {
-			FileInputStream fis = openFileInput(FILENAME);
-			InputStreamReader in =new InputStreamReader(fis);
-			//Taken from http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/index.html on Jan 20 2015
-			Type typeOfT = new TypeToken<ArrayList<TravelClaim>>(){}.getType();
-			claims = gson.fromJson(in, typeOfT);
-			fis.close();
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return claims;
-	}
-	
-	//Taken from https://github.com/joshua2ua/lonelyTwitter on Jan 24 2015 and modified
-	public void saveToFile() {
-		Gson gson = new Gson();
-		try {
-			FileOutputStream fos = openFileOutput(FILENAME, 0);
-			OutputStreamWriter osw = new OutputStreamWriter(fos);
-			gson.toJson(claims, osw);
-			osw.flush();
-			fos.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 	@Override

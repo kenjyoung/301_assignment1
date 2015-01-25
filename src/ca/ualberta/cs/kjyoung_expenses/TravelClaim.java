@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-public class TravelClaim {
+public class TravelClaim implements Comparable<TravelClaim>{
 	private Date startDate;
 	private Date endDate;
 	private String description;
@@ -113,5 +113,9 @@ public class TravelClaim {
 		}
 		str+="\nstatus: "+status;
 		return str;
+	}
+	@Override
+	public int compareTo(TravelClaim other) {
+		return this.getStartDate().compareTo(other.getStartDate());
 	}
 }

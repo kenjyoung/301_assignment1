@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Expense {
+public class Expense implements Comparable<Expense>{
 	private Date date;
 	private String category;
 	private String description;
@@ -54,6 +54,10 @@ public class Expense {
 	}
 	public static void setCategories(ArrayList<String> categories) {
 		Expense.categories = categories;
+	}
+	@Override
+	public int compareTo(Expense other) {
+		return this.getDate().compareTo(other.getDate());
 	}
 	
 }
