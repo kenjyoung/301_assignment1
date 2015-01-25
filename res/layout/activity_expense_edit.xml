@@ -8,9 +8,75 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ca.ualberta.cs.kjyoung_expenses.ExpenseEditActivity" >
 
-    <TextView
+    <Button
+        android:id="@+id/saveExpenseButton"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="save" />
+
+    <TextView
+        android:id="@+id/categoryHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/saveExpenseButton"
+        android:text="Category:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:id="@+id/categorySelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/categoryHeader"
+        android:layout_toRightOf="@+id/categoryHeader" />
+
+    <TextView
+        android:id="@+id/descriptionHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/categorySelector"
+        android:text="Description:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/descriptionBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/descriptionHeader"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/currencyHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/descriptionBody"
+        android:layout_below="@+id/descriptionBody"
+        android:text="Amount:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/currencyBody"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/currencyHeader"
+        android:layout_toRightOf="@+id/currencyHeader"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <Spinner
+        android:id="@+id/currencySelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/currencyBody"
+        android:layout_alignTop="@+id/currencyBody"
+        android:layout_toRightOf="@+id/currencyBody" />
 
 </RelativeLayout>

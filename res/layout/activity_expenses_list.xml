@@ -55,22 +55,22 @@
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
 
 	<TextView
-	    android:id="@+id/startDate"
+	    android:id="@+id/startDateHeader"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignBottom="@+id/from"
-	    android:layout_toRightOf="@+id/from"
 	    android:layout_toEndOf="@id/from"
-	    android:text="Jan 1"
+	    android:layout_toRightOf="@+id/from"
+	    android:text="start"
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
 
 	<TextView
 	    android:id="@+id/to"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_alignBottom="@+id/startDate"
-	    android:layout_toRightOf="@id/startDate"
-	    android:layout_toEndOf="@id/startDate"
+	    android:layout_alignBottom="@+id/startDateHeader"
+	    android:layout_toRightOf="@id/startDateHeader"
+	    android:layout_toEndOf="@id/startDateHeader"
 	    android:text="To: "
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -81,16 +81,16 @@
 	    android:layout_alignBottom="@+id/to"
 	    android:layout_alignParentEnd="true"
 	    android:layout_alignParentRight="true"
-	    android:layout_toRightOf="@+id/to"
 	    android:layout_toEndOf="@id/to"
-	    android:text="Jan 10"
+	    android:layout_toRightOf="@+id/to"
+	    android:text="end"
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
 
 	<TextView
 	    android:id="@+id/claimName"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_above="@+id/startDate"
+	    android:layout_above="@+id/startDateHeader"
 	    android:layout_centerHorizontal="true"
 	    android:text="Claim Name"
 	    android:textAppearance="?android:attr/textAppearanceLarge" />
