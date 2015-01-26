@@ -58,8 +58,11 @@ public class MainActivity extends Activity {
 	}
 	
 	public void addClaim(View view){
+		Integer index=ClaimsListController.addClaim(new TravelClaim());
 		Intent intent = new Intent(this, EditClaimActivity.class);
-		startActivity(intent);	
+		intent.putExtra("index", index);
+		startActivity(intent);
+		claimAdapter.notifyDataSetChanged();
 	}
 
 	@Override

@@ -43,35 +43,31 @@
         android:layout_below="@+id/claimDescriptionBody"
         android:text="Start Date:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
+    
+    <DatePicker
         android:id="@+id/startDate"
+        android:calendarViewShown="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/startDateHeader"
         android:layout_below="@+id/startDateHeader"
-        android:ems="10"
-        android:inputType="date" >
-
-        <requestFocus />
-    </EditText>
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:id="@+id/endDateHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/startDate"
+        android:layout_alignLeft="@+id/startDateHeader"
         android:layout_below="@+id/startDate"
         android:text="End Date:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
+    <DatePicker
         android:id="@+id/endDate"
+        android:calendarViewShown="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/endDateHeader"
         android:layout_below="@+id/endDateHeader"
-        android:ems="10"
-        android:inputType="date" />
+        android:layout_alignParentLeft="true" />
+
+    
 
 </RelativeLayout>

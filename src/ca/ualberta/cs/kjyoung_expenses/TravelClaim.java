@@ -30,6 +30,14 @@ public class TravelClaim implements Comparable<TravelClaim>{
 		this.status=0;
 		this.expenses=new ArrayList <Expense>();
 	}
+	public TravelClaim(){
+		super();
+		this.startDate=new Date();
+		this.endDate=new Date();
+		this.description="Travel";
+		this.status=0;
+		this.expenses=new ArrayList <Expense>();
+	}
 	public Date getStartDate() {
 		return startDate;
 	}

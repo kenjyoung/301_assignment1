@@ -16,8 +16,19 @@ public class ClaimsListController extends Activity {
 		return claims;
 	}
 	
-	public static void addClaim(TravelClaim claim){
-		claims.add(claim);
+	//add a claim to the claims list and return the index it ends up at after sorting
+	public static Integer addClaim(TravelClaim claim){
+		getClaims().add(claim);
+		Collections.sort(claims);
+		return claims.indexOf(claim);
+	}
+	
+	public static void deleteClaim(TravelClaim claim){
+		getClaims().remove(claim);
+	}
+	
+	public static void updateClaim(Integer index, TravelClaim claim){
+		getClaims().set(index, claim);
 		Collections.sort(claims);
 	}
 	
