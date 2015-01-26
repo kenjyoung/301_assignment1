@@ -39,7 +39,6 @@ import android.widget.Button;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
-	private ArrayList <TravelClaim> claims;
 	private ListView claimsList;
 	private ArrayAdapter<TravelClaim> claimAdapter;
 
@@ -47,19 +46,14 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		ClaimsListManager.initManager(this.getApplicationContext());
 		claimsList = (ListView) findViewById(R.id.claimsList);
 	}
 	
 	protected void onStart() {
 		super.onStart();
-		
-		//Taken from https://github.com/joshua2ua/lonelyTwitter on Jan 24 2015 and modified
-		claims = loadFromFile();
-		if(claims==null){
-			claims = new ArrayList<TravelClaim>();
-		}
 		claimAdapter = new ArrayAdapter<TravelClaim>(this,
-				R.layout.claim_list_item, claims);
+				R.layout.claim_list_item, ClaimsListController.getClaims());
 		claimsList.setAdapter(claimAdapter);
 	}
 	

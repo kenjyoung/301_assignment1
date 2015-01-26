@@ -13,6 +13,7 @@ public class ExpensesListActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_expenses_list);
+		ClaimsListManager.initManager(this.getApplicationContext());
 		TextView claimName= (TextView)findViewById(R.id.claimName);
 		claimName.setText(claim.getDescription());
 	}

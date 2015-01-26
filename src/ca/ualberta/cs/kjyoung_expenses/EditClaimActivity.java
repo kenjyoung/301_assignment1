@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class EditClaimActivity extends Activity {
 
@@ -11,6 +12,7 @@ public class EditClaimActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_claim);
+		ClaimsListManager.initManager(this.getApplicationContext());
 	}
 
 	@Override
@@ -32,7 +34,7 @@ public class EditClaimActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-	public void saveClaim(){
+	public void saveClaim(View view){
 		
 	}
 }

@@ -12,6 +12,7 @@ public class ExpenseEditActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_expense_edit);
+		ClaimsListManager.initManager(this.getApplicationContext());
 	}
 
 	@Override

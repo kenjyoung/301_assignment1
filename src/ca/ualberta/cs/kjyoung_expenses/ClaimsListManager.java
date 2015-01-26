@@ -14,10 +14,34 @@ import com.google.gson.reflect.TypeToken;
 
 import android.content.Context;
 
+//This class largely borrowed from https://github.com/abramhindle/student-picker/blob/master/src/ca/softwareprocess/studentpicker/StudentListManager.java, Jan 25 2015
 public class ClaimsListManager {
 	private Context context;
 	private static final String FILENAME = "file.sav";
 	
+	private static ClaimsListManager claimsListManager=null;
+	
+	public static void initManager(Context context){
+		if(claimsListManager==null){
+			if(context==null){
+				throw new RuntimeException("missing context for StudentListManager");
+			}
+			claimsListManager=new ClaimsListManager(context);
+		}
+	}
+	
+	public static ClaimsListManager getManager(){
+		if(claimsListManager==null){
+			throw new RuntimeException("Did not initialize Manager.");
+		}
+		return claimsListManager;
+	}
+	
+	public ClaimsListManager(Context context){
+		this.context=context;
+	}
+	
+	//Taken from https://github.com/joshua2ua/lonelyTwitter on Jan 24 2015 and modified
 	public ArrayList<TravelClaim> loadClaims(){
 		Gson gson = new Gson();
 		ArrayList<TravelClaim> claims = new ArrayList<TravelClaim>();
@@ -39,6 +63,7 @@ public class ClaimsListManager {
 		return claims;
 	}
 	
+	//Taken from https://github.com/joshua2ua/lonelyTwitter on Jan 24 2015 and modified
 	public void saveClaims(ArrayList<TravelClaim> claims){
 		Gson gson = new Gson();
 		try {
