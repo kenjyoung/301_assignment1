@@ -6,7 +6,7 @@ import java.util.Collections;
 import android.app.Activity;
 
 //This class largely borrowed from https://github.com/abramhindle/student-picker/blob/master/src/ca/softwareprocess/studentpicker/StudentListController.java, Jan 25 2015
-public class ClaimsListController extends Activity {
+public class ClaimsListController{
 	private static ArrayList <TravelClaim> claims=null;
 	public static ArrayList <TravelClaim> getClaims(){
 		if(claims ==null){

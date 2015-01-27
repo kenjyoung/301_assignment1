@@ -2,19 +2,21 @@ package ca.ualberta.cs.kjyoung_expenses;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
 public class TravelClaim implements Comparable<TravelClaim>{
-	private Date startDate;
-	private Date endDate;
+	private GregorianCalendar startDate;
+	private GregorianCalendar endDate;
 	private String description;
 	private Byte status;
 	private ArrayList<Expense> expenses;
-	public TravelClaim(Date startDate, Date endDate, String description, ArrayList<Expense> expenses) {
+	public TravelClaim(GregorianCalendar startDate, GregorianCalendar endDate, String description, ArrayList<Expense> expenses) {
 		super();
 		this.startDate=startDate;
 		this.endDate=endDate;
@@ -22,7 +24,7 @@ public class TravelClaim implements Comparable<TravelClaim>{
 		this.expenses=expenses;
 		this.status=0;
 	}
-	public TravelClaim(Date startDate, Date endDate, String description) {
+	public TravelClaim(GregorianCalendar startDate, GregorianCalendar endDate, String description) {
 		super();
 		this.startDate=startDate;
 		this.endDate=endDate;
@@ -32,22 +34,22 @@ public class TravelClaim implements Comparable<TravelClaim>{
 	}
 	public TravelClaim(){
 		super();
-		this.startDate=new Date();
-		this.endDate=new Date();
+		this.startDate=new GregorianCalendar();
+		this.endDate=new GregorianCalendar();
 		this.description="Travel";
 		this.status=0;
 		this.expenses=new ArrayList <Expense>();
 	}
-	public Date getStartDate() {
+	public GregorianCalendar getStartDate() {
 		return startDate;
 	}
-	public void setStartDate(Date startDate) {
+	public void setStartDate(GregorianCalendar startDate) {
 		this.startDate = startDate;
 	}
-	public Date getEndDate() {
+	public GregorianCalendar getEndDate() {
 		return endDate;
 	}
-	public void setEndDate(Date endDate) {
+	public void setEndDate(GregorianCalendar endDate) {
 		this.endDate = endDate;
 	}
 	public String getDescription() {

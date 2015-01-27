@@ -34,13 +34,19 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	private ListView claimsList;
 	private ArrayAdapter<TravelClaim> claimAdapter;
+	private Boolean deleteMode=false; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +54,32 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		ClaimsListManager.initManager(this.getApplicationContext());
 		claimsList = (ListView) findViewById(R.id.claimsList);
+		claimAdapter = new ArrayAdapter<TravelClaim>(this,
+		R.layout.claim_list_item, ClaimsListController.getClaims());
+		claimsList.setAdapter(claimAdapter);
+		
+		claimsList.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,int index,
+					long id){
+						 if(deleteMode){
+							 //if deleteMode is on delete teh clicked claim
+						 }
+						 else{
+							 Intent intent= new Intent(view.getContext(), EditClaimActivity.class);
+							 intent.putExtra("index",index);
+							 startActivity(intent);
+							 claimAdapter.notifyDataSetChanged();
+							 ClaimsListController.saveClaims();
+						 }
+					}
+		});
+		
 	}
 	
-	protected void onStart() {
+	protected void onStart(){
 		super.onStart();
-		claimAdapter = new ArrayAdapter<TravelClaim>(this,
-				R.layout.claim_list_item, ClaimsListController.getClaims());
-		claimsList.setAdapter(claimAdapter);
+		claimAdapter.notifyDataSetChanged();
 	}
 	
 	public void addClaim(View view){
@@ -62,8 +87,8 @@ public class MainActivity extends Activity {
 		Intent intent = new Intent(this, EditClaimActivity.class);
 		intent.putExtra("index", index);
 		startActivity(intent);
-		claimAdapter.notifyDataSetChanged();
 	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

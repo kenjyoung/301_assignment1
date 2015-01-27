@@ -1,5 +1,6 @@
 package ca.ualberta.cs.kjyoung_expenses;
 
+import java.util.GregorianCalendar;
 import java.util.Date;
 
 import android.app.Activity;
@@ -12,13 +13,28 @@ import android.widget.EditText;
 
 public class EditClaimActivity extends Activity {
 	private Integer index;
-
+	DatePicker startDP;
+	DatePicker endDP;
+	EditText descriptionText;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_claim);
 		ClaimsListManager.initManager(this.getApplicationContext());
 		index=getIntent().getIntExtra("index",0);
+		startDP=(DatePicker) findViewById(R.id.startDate);
+		endDP=(DatePicker) findViewById(R.id.endDate);
+		descriptionText=(EditText) findViewById(R.id.claimDescriptionBody);
+		TravelClaim currentClaim=ClaimsListController.getClaims().get(index);
+		GregorianCalendar startDate=currentClaim.getStartDate();
+		GregorianCalendar endDate=currentClaim.getEndDate();
+		String description=currentClaim.getDescription();
+		startDP.updateDate(startDate.get(GregorianCalendar.YEAR),startDate.get(GregorianCalendar.MONTH),
+				startDate.get(GregorianCalendar.DAY_OF_MONTH));
+		endDP.updateDate(endDate.get(GregorianCalendar.YEAR),endDate.get(GregorianCalendar.MONTH),
+				endDate.get(GregorianCalendar.DAY_OF_MONTH));
+		descriptionText.setText(description);
 	}
 
 	@Override
@@ -41,17 +57,15 @@ public class EditClaimActivity extends Activity {
 	}
 	
 	public void saveClaim(View view){
-		DatePicker startDP=(DatePicker) findViewById(R.id.startDate);
-		DatePicker endDP=(DatePicker) findViewById(R.id.endDate);
-		EditText descriptionText=(EditText) findViewById(R.id.claimDescriptionBody);
-		Date startDate=new Date(startDP.getYear()-1900,startDP.getMonth(),
+		GregorianCalendar startDate=new GregorianCalendar(startDP.getYear(),startDP.getMonth(),
 				startDP.getDayOfMonth());
-		Date endDate=new Date(endDP.getYear()-1900,endDP.getMonth(),
+		GregorianCalendar endDate=new GregorianCalendar(endDP.getYear(),endDP.getMonth(),
 				endDP.getDayOfMonth());
 		String description=descriptionText.getText().toString();
 		
 		TravelClaim claim=new TravelClaim(startDate,endDate,description);
 		ClaimsListController.updateClaim(index, claim);
+		ClaimsListController.saveClaims();
 		finish();
 	}
 }
