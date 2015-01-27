@@ -14,5 +14,11 @@
     <string name="title_activity_new_claim">NewClaimActivity</string>
     <string name="description_of_claim">Claim Description</string>
     <string name="edit">Edit</string>
+    <string-array name="status_spinner_entries">
+        <item>in progress</item>
+        <item>submitted</item>
+        <item>returned</item>
+        <item>approved</item>
+    </string-array>
 
 </resources>

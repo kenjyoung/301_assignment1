@@ -17,57 +17,84 @@
         android:layout_alignParentTop="true"
         android:onClick="saveClaim"
         android:text="save" />
-
-    <TextView
-        android:id="@+id/claimDescriptionHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/saveClaimButton"
-        android:text="Description:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/claimDescriptionBody"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/claimDescriptionHeader"
-        android:layout_below="@+id/claimDescriptionHeader"
-        android:ems="10" />
-
-    <TextView
-        android:id="@+id/startDateHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/claimDescriptionBody"
-        android:layout_below="@+id/claimDescriptionBody"
-        android:text="Start Date:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-    
-    <DatePicker
-        android:id="@+id/startDate"
-        android:calendarViewShown="false"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/startDateHeader"
-        android:layout_alignParentLeft="true" />
-
-    <TextView
-        android:id="@+id/endDateHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/startDateHeader"
-        android:layout_below="@+id/startDate"
-        android:text="End Date:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-    <DatePicker
-        android:id="@+id/endDate"
-        android:calendarViewShown="false"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/endDateHeader"
-        android:layout_alignParentLeft="true" />
-
-    
+	    <ScrollView
+	        android:layout_below="@+id/saveClaimButton"
+	        android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent">
+	    <RelativeLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent" >
+	        
+	        <TextView
+		        android:id="@+id/statusHeader"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:layout_alignParentTop="true"
+		        android:text="Status:"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+	        
+	        <Spinner
+		        android:id="@+id/statusSpinner"
+		        android:entries="@array/status_spinner_entries"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@+id/statusHeader"
+		        android:layout_alignRight="@+id/claimDescriptionBody"
+		        android:layout_alignTop="@+id/statusHeader"
+		        android:layout_toRightOf="@+id/endDateHeader" />
+		
+		    <TextView
+		        android:id="@+id/claimDescriptionHeader"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@+id/statusSpinner"
+		        android:layout_alignParentLeft="true"
+		        android:text="Description:"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+		
+		    <EditText
+		        android:id="@+id/claimDescriptionBody"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignLeft="@+id/claimDescriptionHeader"
+		        android:layout_below="@+id/claimDescriptionHeader"
+		        android:ems="10" />
+		
+		    <TextView
+		        android:id="@+id/startDateHeader"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignLeft="@+id/claimDescriptionBody"
+		        android:layout_below="@+id/claimDescriptionBody"
+		        android:text="Start Date:"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+		    
+		    <DatePicker
+		        android:id="@+id/startDate"
+		        android:calendarViewShown="false"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@+id/startDateHeader"
+		        android:layout_alignParentLeft="true" />
+		
+		    <TextView
+		        android:id="@+id/endDateHeader"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignLeft="@+id/startDateHeader"
+		        android:layout_below="@+id/startDate"
+		        android:text="End Date:"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+		    <DatePicker
+		        android:id="@+id/endDate"
+		        android:calendarViewShown="false"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@+id/endDateHeader"
+		        android:layout_alignParentLeft="true" />
+	
+	    </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
