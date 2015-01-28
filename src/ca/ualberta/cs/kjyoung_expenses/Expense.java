@@ -60,4 +60,11 @@ public class Expense implements Comparable<Expense>{
 		return this.getDate().compareTo(other.getDate());
 	}
 	
+	public String toString(){
+		String str= this.getDescription()+"\n";
+		str+="category: "+this.getCategory()+"\n";
+		str+="amount: "+this.getAmount().toString()+" "+this.getCurrency();
+		return str;
+	}
+	
 }

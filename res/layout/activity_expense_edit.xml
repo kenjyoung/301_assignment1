@@ -75,7 +75,6 @@
         android:id="@+id/currencySelector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/currencyBody"
         android:layout_alignTop="@+id/currencyBody"
         android:layout_toRightOf="@+id/currencyBody" />
 

@@ -42,7 +42,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/expensesList"
         android:layout_centerHorizontal="true"
-        android:text="@string/edit" />
+        android:text="@string/edit" 
+        android:onClick="editClaim"/>
 
 	<TextView
 	    android:id="@+id/from"

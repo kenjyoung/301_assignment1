@@ -26,10 +26,10 @@ public class EditClaimActivity extends Activity {
 		startDP=(DatePicker) findViewById(R.id.startDate);
 		endDP=(DatePicker) findViewById(R.id.endDate);
 		descriptionText=(EditText) findViewById(R.id.claimDescriptionBody);
-		TravelClaim currentClaim=ClaimsListController.getClaims().get(index);
-		GregorianCalendar startDate=currentClaim.getStartDate();
-		GregorianCalendar endDate=currentClaim.getEndDate();
-		String description=currentClaim.getDescription();
+		TravelClaim claim=ClaimsListController.getClaims().get(index);
+		GregorianCalendar startDate=claim.getStartDate();
+		GregorianCalendar endDate=claim.getEndDate();
+		String description=claim.getDescription();
 		startDP.updateDate(startDate.get(GregorianCalendar.YEAR),startDate.get(GregorianCalendar.MONTH),
 				startDate.get(GregorianCalendar.DAY_OF_MONTH));
 		endDP.updateDate(endDate.get(GregorianCalendar.YEAR),endDate.get(GregorianCalendar.MONTH),

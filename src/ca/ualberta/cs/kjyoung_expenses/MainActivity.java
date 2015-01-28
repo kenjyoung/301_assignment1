@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
 		ClaimsListManager.initManager(this.getApplicationContext());
 		claimsList = (ListView) findViewById(R.id.claimsList);
 		claimAdapter = new ArrayAdapter<TravelClaim>(this,
-		R.layout.claim_list_item, ClaimsListController.getClaims());
+		R.layout.list_item, ClaimsListController.getClaims());
 		claimsList.setAdapter(claimAdapter);
 		
 		claimsList.setOnItemClickListener(new OnItemClickListener(){
@@ -63,14 +63,12 @@ public class MainActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view,int index,
 					long id){
 						 if(deleteMode){
-							 //if deleteMode is on delete teh clicked claim
+							 //if deleteMode is on delete the clicked claim
 						 }
 						 else{
-							 Intent intent= new Intent(view.getContext(), EditClaimActivity.class);
+							 Intent intent= new Intent(view.getContext(), ExpensesListActivity.class);
 							 intent.putExtra("index",index);
 							 startActivity(intent);
-							 claimAdapter.notifyDataSetChanged();
-							 ClaimsListController.saveClaims();
 						 }
 					}
 		});
