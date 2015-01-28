@@ -8,24 +8,39 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class ExpensesListActivity extends Activity {
 	private Integer index;
+	private TravelClaim claim;
+	private ArrayAdapter<Expense> expenseAdapter;
+	private ListView expenseList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_expenses_list);
-		index=getIntent().getIntExtra("index",0);
-		TravelClaim claim=ClaimsListController.getClaims().get(index);
-		GregorianCalendar startDate=claim.getStartDate();
-		GregorianCalendar endDate=claim.getEndDate();
-		String description=claim.getDescription();
 		ClaimsListManager.initManager(this.getApplicationContext());
-		TextView claimName= (TextView)findViewById(R.id.claimName);
-		claimName.setText(claim.getDescription());
+		index=getIntent().getIntExtra("index",0);
+		claim=ClaimsListController.getClaims().get(index);
+		expenseList=(ListView) findViewById(R.id.expensesList);
+		expenseAdapter = new ArrayAdapter<Expense>(this,
+				R.layout.list_item, claim.getExpenses());
+		expenseList.setAdapter(expenseAdapter);
 	}
+	
+	protected void onStart(){
+		super.onStart();
+		TextView claimNameText = (TextView)findViewById(R.id.claimName);
+		TextView startDateText = (TextView)findViewById(R.id.startDate);
+		TextView endDateText = (TextView)findViewById(R.id.endDate);
+		claimNameText.setText(claim.getDescription());
+		startDateText.setText(claim.getStartDate().toString());
+		endDateText.setText(claim.getEndDate().toString());
+		expenseAdapter.notifyDataSetChanged();
+		}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -38,6 +53,15 @@ public class ExpensesListActivity extends Activity {
 		 Intent intent= new Intent(this, EditClaimActivity.class);
 		 intent.putExtra("index",index);
 		 startActivity(intent);
+	}
+	
+	public void addExpense(View view){
+		Intent intent= new Intent(this, EditExpenseActivity.class);
+		Integer expenseIndex=claim.addExpense(new Expense());
+		intent.putExtra("claimIndex", index);
+		intent.putExtra("expenseIndex", index);
+		startActivity(intent);
+		
 	}
 
 	@Override

@@ -25,7 +25,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="@string/add_expense" />
+        android:text="@string/add_expense" 
+        android:onClick="addExpense"/>
 
     <Button
         android:id="@+id/deleteExpensesButton"
@@ -56,7 +57,7 @@
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
 
 	<TextView
-	    android:id="@+id/startDateHeader"
+	    android:id="@+id/startDate"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignBottom="@+id/from"
@@ -69,9 +70,9 @@
 	    android:id="@+id/to"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_alignBottom="@+id/startDateHeader"
-	    android:layout_toRightOf="@id/startDateHeader"
-	    android:layout_toEndOf="@id/startDateHeader"
+	    android:layout_alignBottom="@+id/startDate"
+	    android:layout_toRightOf="@id/startDate"
+	    android:layout_toEndOf="@id/startDate"
 	    android:text="To: "
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -91,7 +92,7 @@
 	    android:id="@+id/claimName"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_above="@+id/startDateHeader"
+	    android:layout_above="@+id/startDate"
 	    android:layout_centerHorizontal="true"
 	    android:text="Claim Name"
 	    android:textAppearance="?android:attr/textAppearanceLarge" />

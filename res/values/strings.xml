@@ -14,11 +14,30 @@
     <string name="title_activity_new_claim">NewClaimActivity</string>
     <string name="description_of_claim">Claim Description</string>
     <string name="edit">Edit</string>
+    
     <string-array name="status_spinner_entries">
         <item>in progress</item>
         <item>submitted</item>
         <item>returned</item>
         <item>approved</item>
+    </string-array>
+    
+    <string-array name="expense_categories">
+        <item>air fare</item>
+        <item>ground transport</item>
+        <item>vehicle rental</item>
+        <item>fuel</item>
+        <item>parking</item>
+        <item>registration</item>
+        <item>accommodation</item>
+        <item>meal</item>
+    </string-array>
+    
+    <string-array name="currencies">
+        <item>CAD</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>GBP</item>
     </string-array>
 
 </resources>

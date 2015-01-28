@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class ExpenseEditActivity extends Activity {
+public class EditExpenseActivity extends Activity {
 	private Expense expense;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_expense_edit);
+		setContentView(R.layout.activity_edit_expense);
 		ClaimsListManager.initManager(this.getApplicationContext());
 	}
 

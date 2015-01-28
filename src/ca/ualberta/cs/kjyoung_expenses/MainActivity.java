@@ -16,17 +16,8 @@
     */
 package ca.ualberta.cs.kjyoung_expenses;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import java.util.Arrays;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -34,14 +25,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	private ListView claimsList;
@@ -57,6 +44,10 @@ public class MainActivity extends Activity {
 		claimAdapter = new ArrayAdapter<TravelClaim>(this,
 		R.layout.list_item, ClaimsListController.getClaims());
 		claimsList.setAdapter(claimAdapter);
+		Expense.setCategories(new ArrayList<String>(Arrays.asList(
+				getResources().getStringArray(R.array.expense_categories))));
+		Expense.setCurrencies(new ArrayList<String>(Arrays.asList(
+				getResources().getStringArray(R.array.currencies))));
 		
 		claimsList.setOnItemClickListener(new OnItemClickListener(){
 			@Override

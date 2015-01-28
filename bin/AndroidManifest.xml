@@ -31,7 +31,7 @@
                 android:value="ca.ualberta.cs.kjyoung_expenses.MainActivity" />
         </activity>
         <activity
-            android:name=".ExpenseEditActivity"
+            android:name=".EditExpenseActivity"
             android:label="@string/title_activity_expense_edit"
             android:parentActivityName=".ExpensesListActivity" >
             <meta-data

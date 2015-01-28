@@ -9,6 +9,8 @@ package ca.ualberta.cs.kjyoung_expenses;
 
 public final class R {
     public static final class array {
+        public static final int currencies=0x7f060002;
+        public static final int expense_categories=0x7f060001;
         public static final int status_spinner_entries=0x7f060000;
     }
     public static final class attr {
@@ -60,7 +62,7 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_edit_claim=0x7f030000;
-        public static final int activity_expense_edit=0x7f030001;
+        public static final int activity_edit_expense=0x7f030001;
         public static final int activity_expenses_list=0x7f030002;
         public static final int activity_main=0x7f030003;
         public static final int list_item=0x7f030004;

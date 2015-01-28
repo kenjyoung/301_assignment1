@@ -2,10 +2,10 @@ package ca.ualberta.cs.kjyoung_expenses;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Expense implements Comparable<Expense>{
-	private Date date;
+	private GregorianCalendar date;
 	private String category;
 	private String description;
 	private BigDecimal amount;
@@ -13,10 +13,27 @@ public class Expense implements Comparable<Expense>{
 	private static ArrayList <String> currencies;
 	private static ArrayList <String> categories;
 	
-	public Date getDate() {
+	public Expense() {
+		super();
+		this.date=new GregorianCalendar();
+		this.category="Unspecified";
+		this.description="Expense";
+		this.amount=new BigDecimal(0);
+		this.currency="NA";
+	}
+	public Expense(GregorianCalendar date, String category, String description, 
+			BigDecimal amount, String currency) {
+		super();
+		this.date=date;
+		this.category=category;
+		this.description=description;
+		this.amount=amount;
+		this.currency=currency;
+	}
+	public GregorianCalendar getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(GregorianCalendar date) {
 		this.date = date;
 	}
 	public String getCategory() {
@@ -46,15 +63,30 @@ public class Expense implements Comparable<Expense>{
 	public static ArrayList<String> getCurrencies() {
 		return currencies;
 	}
-	public static void setCurrencies(ArrayList<String> currencies) {
-		Expense.currencies = currencies;
-	}
+
 	public static ArrayList<String> getCategories() {
 		return categories;
 	}
-	public static void setCategories(ArrayList<String> categories) {
-		Expense.categories = categories;
+	
+	//add a new category to the list of supported categories
+	public static void addCategory(String category) {
+		categories.add(category);
 	}
+	
+	//add a new currency to the list of supported currencies
+	public static void addCurrency(String currency) {
+		currencies.add(currency);
+	}
+	
+	public static void setCurrencies(ArrayList<String> currencies){
+		Expense.currencies=currencies;
+	}
+	
+	public static void setCategories(ArrayList<String> categories){
+		Expense.categories=categories;
+		
+	}
+	
 	@Override
 	public int compareTo(Expense other) {
 		return this.getDate().compareTo(other.getDate());

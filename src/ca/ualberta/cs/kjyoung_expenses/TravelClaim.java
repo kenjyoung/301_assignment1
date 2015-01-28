@@ -2,12 +2,10 @@ package ca.ualberta.cs.kjyoung_expenses;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
-import java.util.Date;
+import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Set;
 
 public class TravelClaim implements Comparable<TravelClaim>{
@@ -16,13 +14,8 @@ public class TravelClaim implements Comparable<TravelClaim>{
 	private String description;
 	private Byte status;
 	private ArrayList<Expense> expenses;
-	public TravelClaim(GregorianCalendar startDate, GregorianCalendar endDate, String description, ArrayList<Expense> expenses) {
-		super();
-		this.startDate=startDate;
-		this.endDate=endDate;
-		this.description=description;
-		this.expenses=expenses;
-		this.status=0;
+	public ArrayList<Expense> getExpenses() {
+		return expenses;
 	}
 	public TravelClaim(GregorianCalendar startDate, GregorianCalendar endDate, String description) {
 		super();
@@ -80,8 +73,11 @@ public class TravelClaim implements Comparable<TravelClaim>{
 	public void send(String email){
 		
 	}
-	public void addExpense(Expense expense){
+	//add an expense item and return its index after the expense list is sorted
+	public Integer addExpense(Expense expense){
 		expenses.add(expense);
+		Collections.sort(expenses);
+		return expenses.indexOf(expense);
 	}
 	public void removeExpense(Expense expense){
 		expenses.remove(expense);
