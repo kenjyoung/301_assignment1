@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ExpensesListActivity"
+            android:name=".DisplayClaimInProgressActivity"
             android:label="@string/title_activity_expenses_list"
             android:parentActivityName=".MainActivity" >
             <meta-data
@@ -33,7 +33,7 @@
         <activity
             android:name=".EditExpenseActivity"
             android:label="@string/title_activity_expense_edit"
-            android:parentActivityName=".ExpensesListActivity" >
+            android:parentActivityName=".DisplayClaimInProgressActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ExpensesListActivity" />
@@ -45,6 +45,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="MainActivity" />
+        </activity>
+        <activity
+            android:name=".DisplayClaimSubmitedActivity"
+            android:label="@string/title_activity_claim_accept_return" >
+        </activity>
+        <activity
+            android:name=".DisplayClaimAcceptedActivity"
+            android:label="@string/title_activity_display_claim_accepted" >
         </activity>
     </application>
 

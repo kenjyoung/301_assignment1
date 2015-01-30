@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,39 +12,30 @@
         android:id="@+id/expensesList"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/claimName"
-        android:layout_below="@+id/deleteExpensesButton"
+        android:layout_below="@+id/returnButton"
+        android:layout_above="@+id/sendButton"
         android:scrollbars="vertical" >
     </ListView>
 
     <Button
-        android:id="@+id/addExpenseButton"
+        android:id="@+id/acceptButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="@string/add_expense" 
+        android:text="Accept" 
         android:onClick="addExpense"/>
 
     <Button
-        android:id="@+id/deleteExpensesButton"
+        android:id="@+id/returnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:onClick="toggleDelete"
-        android:text="@string/delete_expenses" />
-
-    <Button
-        android:id="@+id/editClaimButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/expensesList"
-        android:layout_centerHorizontal="true"
-        android:text="@string/edit" 
-        android:onClick="editClaim"/>
+        android:text="Return" />
 
 	<TextView
 	    android:id="@+id/from"
@@ -105,5 +95,13 @@
 	    android:layout_centerHorizontal="true"
 	    android:text="Claim Name"
 	    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		<Button
+		    android:id="@+id/sendButton"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_above="@+id/claimName"
+		    android:layout_centerHorizontal="true"
+		    android:text="Send" />
 
 </RelativeLayout>

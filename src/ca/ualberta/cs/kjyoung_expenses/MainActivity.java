@@ -63,12 +63,14 @@ public class MainActivity extends Activity {
 							 ClaimsListController.saveClaims();
 						 }
 						 else{
-							 Intent intent= new Intent(view.getContext(), ExpensesListActivity.class);
+							 Intent intent= new Intent(view.getContext(), DisplayClaimInProgressActivity.class);
 							 intent.putExtra("index",index);
 							 startActivity(intent);
 						 }
 					}
 		});
+		
+		
 		
 	}
 	

@@ -18,7 +18,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class ExpensesListActivity extends Activity {
+public class DisplayClaimInProgressActivity extends Activity {
 	private int index;
 	private TravelClaim claim;
 	private ArrayAdapter<Expense> expenseAdapter;
@@ -32,7 +32,7 @@ public class ExpensesListActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_expenses_list);
+		setContentView(R.layout.activity_display_claim_in_progress);
 		claimNameText = (TextView)findViewById(R.id.claimName);
 		startDateText = (TextView)findViewById(R.id.startDate);
 		endDateText = (TextView)findViewById(R.id.endDate);
