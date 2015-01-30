@@ -10,9 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 public class EditClaimActivity extends Activity {
-	private Integer index;
+	private int index;
 	DatePicker startDP;
 	DatePicker endDP;
 	EditText descriptionText;
@@ -36,12 +37,20 @@ public class EditClaimActivity extends Activity {
 				endDate.get(GregorianCalendar.DAY_OF_MONTH));
 		descriptionText.setText(description);
 	}
+	
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.new_claim, menu);
 		return true;
+	}
+	
+	
+	public void onPause(){
+		super.onPause();
+		saveClaim();
 	}
 
 	@Override
@@ -56,16 +65,20 @@ public class EditClaimActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-	public void saveClaim(View view){
+	public void saveClaim(){
 		GregorianCalendar startDate=new GregorianCalendar(startDP.getYear(),startDP.getMonth(),
 				startDP.getDayOfMonth());
 		GregorianCalendar endDate=new GregorianCalendar(endDP.getYear(),endDP.getMonth(),
 				endDP.getDayOfMonth());
 		String description=descriptionText.getText().toString();
 		
-		TravelClaim claim=new TravelClaim(startDate,endDate,description);
-		ClaimsListController.updateClaim(index, claim);
+		
+		ClaimsListController.getClaims().get(index).updateInfo(startDate, endDate, description);
 		ClaimsListController.saveClaims();
 		finish();
+	}
+	
+	public void saveClick(View view){
+		saveClaim();
 	}
 }

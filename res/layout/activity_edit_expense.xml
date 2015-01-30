@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:onClick="saveClick"
         android:text="save" />
 
     <TextView
@@ -52,13 +53,30 @@
 
         <requestFocus />
     </EditText>
+    
+    <TextView
+		        android:id="@+id/expenseDateHeader"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:layout_below="@+id/descriptionBody"
+		        android:text="Date:"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <DatePicker
+		        android:id="@+id/expenseDate"
+		        android:calendarViewShown="false"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@+id/expenseDateHeader"
+		        android:layout_alignParentLeft="true" />
 
     <TextView
         android:id="@+id/currencyHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/descriptionBody"
-        android:layout_below="@+id/descriptionBody"
+        android:layout_below="@+id/expenseDate"
         android:text="Amount:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -75,6 +93,7 @@
         android:id="@+id/currencySelector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/currencyBody"
         android:layout_alignTop="@+id/currencyBody"
         android:layout_toRightOf="@+id/currencyBody" />
 

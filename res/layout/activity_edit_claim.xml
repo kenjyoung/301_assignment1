@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:onClick="saveClaim"
+        android:onClick="saveClick"
         android:text="save" />
 	    <ScrollView
 	        android:layout_below="@+id/saveClaimButton"
@@ -24,31 +24,11 @@
 	    <RelativeLayout
 	        android:layout_width="fill_parent"
 	        android:layout_height="fill_parent" >
-	        
-	        <TextView
-		        android:id="@+id/statusHeader"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_alignParentLeft="true"
-		        android:layout_alignParentTop="true"
-		        android:text="Status:"
-		        android:textAppearance="?android:attr/textAppearanceMedium" />
-	        
-	        <Spinner
-		        android:id="@+id/statusSpinner"
-		        android:entries="@array/status_spinner_entries"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_below="@+id/statusHeader"
-		        android:layout_alignRight="@+id/claimDescriptionBody"
-		        android:layout_alignTop="@+id/statusHeader"
-		        android:layout_toRightOf="@+id/endDateHeader" />
 		
 		    <TextView
 		        android:id="@+id/claimDescriptionHeader"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:layout_below="@+id/statusSpinner"
 		        android:layout_alignParentLeft="true"
 		        android:text="Description:"
 		        android:textAppearance="?android:attr/textAppearanceMedium" />

@@ -21,6 +21,8 @@ import java.util.Arrays;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,12 +30,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
 	private ListView claimsList;
 	private ArrayAdapter<TravelClaim> claimAdapter;
 	private Boolean deleteMode=false; 
+	private Drawable buttonDefault;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +58,9 @@ public class MainActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view,int index,
 					long id){
 						 if(deleteMode){
-							 //if deleteMode is on delete the clicked claim
+							 ClaimsListController.deleteClaim(index);
+							 claimAdapter.notifyDataSetChanged();
+							 ClaimsListController.saveClaims();
 						 }
 						 else{
 							 Intent intent= new Intent(view.getContext(), ExpensesListActivity.class);
@@ -72,10 +78,22 @@ public class MainActivity extends Activity {
 	}
 	
 	public void addClaim(View view){
-		Integer index=ClaimsListController.addClaim(new TravelClaim());
+		int index=ClaimsListController.addClaim(new TravelClaim());
 		Intent intent = new Intent(this, EditClaimActivity.class);
 		intent.putExtra("index", index);
 		startActivity(intent);
+	}
+	
+	public void toggleDelete(View view){
+		deleteMode=!deleteMode;
+		
+		if(deleteMode){
+			buttonDefault=((Button)view).getBackground();
+			((Button)view).setBackgroundColor(Color.RED);
+		}
+		else{
+			((Button)view).setBackground(buttonDefault);
+		}
 	}
 	
 

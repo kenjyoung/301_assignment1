@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="14dp"
+        android:onClick="toggleDelete"
         android:text="@string/delete_claims"/>
 
     <ListView
@@ -42,6 +43,8 @@
         android:id="@+id/addClaimButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/deleteClaimsButton"
+        android:layout_alignBottom="@+id/deleteClaimsButton"
         android:layout_above="@+id/claimsList"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"

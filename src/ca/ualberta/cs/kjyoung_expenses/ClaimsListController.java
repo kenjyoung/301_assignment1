@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import android.app.Activity;
+import android.widget.Toast;
 
 //This class largely borrowed from https://github.com/abramhindle/student-picker/blob/master/src/ca/softwareprocess/studentpicker/StudentListController.java, Jan 25 2015
 public class ClaimsListController{
@@ -17,17 +18,18 @@ public class ClaimsListController{
 	}
 	
 	//add a claim to the claims list and return the index it ends up at after sorting
-	public static Integer addClaim(TravelClaim claim){
+	public static int addClaim(TravelClaim claim){
 		getClaims().add(claim);
 		Collections.sort(claims);
 		return claims.indexOf(claim);
 	}
 	
-	public static void deleteClaim(TravelClaim claim){
-		getClaims().remove(claim);
+	//this is broken somehow, figure it out
+	public static void deleteClaim(int index){
+		ClaimsListController.getClaims().remove(index);
 	}
 	
-	public static void updateClaim(Integer index, TravelClaim claim){
+	public static void updateClaim(int index, TravelClaim claim){
 		getClaims().set(index, claim);
 		Collections.sort(claims);
 	}

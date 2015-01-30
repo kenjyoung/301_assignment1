@@ -57,30 +57,42 @@ public class TravelClaim implements Comparable<TravelClaim>{
 	public void setStatus(Byte status) {
 		this.status = status;
 	}
+	
+	//convenient way to change basic info when editing claim information
+	public void updateInfo(GregorianCalendar startDate, GregorianCalendar endDate, String description){
+		this.startDate=startDate;
+		this.endDate=endDate;
+		this.description=description;
+	}
+	
+	public void updateExpense(int index, Expense expense){
+		getExpenses().set(index, expense);
+	}
+	
 	public HashMap <String, BigDecimal> getTotals(){
 		HashMap<String, BigDecimal> totals= new HashMap<String, BigDecimal>();
 		Expense expense;
-		for(Integer i=0;i<this.expenses.size();i++){
+		for(int i=0;i<this.expenses.size();i++){
 			expense=expenses.get(i);
 			String currency=expense.getCurrency();
 			BigDecimal amount=expense.getAmount();
 			if(totals.containsKey(currency)){
-				totals.put(currency,amount.add((BigDecimal) totals.get(currency)));
+				totals.put(currency,amount.add(totals.get(currency)));
 			}
 		}
-		return new HashMap<String, BigDecimal>();
+		return totals;
 	}
 	public void send(String email){
 		
 	}
 	//add an expense item and return its index after the expense list is sorted
-	public Integer addExpense(Expense expense){
+	public int addExpense(Expense expense){
 		expenses.add(expense);
 		Collections.sort(expenses);
 		return expenses.indexOf(expense);
 	}
-	public void removeExpense(Expense expense){
-		expenses.remove(expense);
+	public void removeExpense(int index){
+		expenses.remove(index);
 	}
 	//writes out the description along with currency totals and status on separate lines
 	//for convenient listing of claims
