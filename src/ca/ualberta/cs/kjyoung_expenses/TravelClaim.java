@@ -104,10 +104,13 @@ public class TravelClaim implements Comparable<TravelClaim>{
 		this.description=description;
 	}
 	
-	public void updateExpense(int index, GregorianCalendar date, String category, 
+	//update an expense and return its new index
+	public int updateExpense(int index, GregorianCalendar date, String category, 
 			String description, BigDecimal amount, String currency){
-		getExpenses().get(index).updateInfo(date, category, description, amount, currency);
+		Expense expense=getExpense(index);
+		expense.updateInfo(date, category, description, amount, currency);
 		Collections.sort(expenses);
+		return expenses.indexOf(expense);
 	}
 	
 	//return a map from each currency used in an expense to the total value of that currency

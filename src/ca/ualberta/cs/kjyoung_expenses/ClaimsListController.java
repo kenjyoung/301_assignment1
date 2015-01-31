@@ -38,11 +38,14 @@ public class ClaimsListController{
 		ClaimsListController.getClaims().remove(index);
 	}
 	
-	public static void updateClaim(int index, GregorianCalendar startDate, 
+	//update claim and return its new index
+	public static int updateClaim(int index, GregorianCalendar startDate, 
 			GregorianCalendar endDate, String description){
-		ClaimsListController.getClaims().get(index).updateInfo(
-				startDate, endDate, description);
+		TravelClaim claim=ClaimsListController.getClaim(index);
+		claim.updateInfo(startDate, endDate, description);
 		Collections.sort(claims);
+		return claims.indexOf(claim);
+		
 		
 	}
 	

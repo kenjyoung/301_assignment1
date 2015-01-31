@@ -94,10 +94,10 @@
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/currencyHeader"
-        android:layout_toRightOf="@+id/currencyHeader"
         android:layout_toEndOf="@+id/currencyHeader"
+        android:layout_toRightOf="@+id/currencyHeader"
         android:ems="10"
-        android:inputType="numberDecimal" />
+        android:inputType="numberSigned|numberDecimal" />
 
     <Spinner
         android:id="@+id/currencySelector"

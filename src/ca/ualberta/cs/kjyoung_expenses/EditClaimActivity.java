@@ -80,8 +80,8 @@ public class EditClaimActivity extends Activity {
 		}
 		String description=descriptionText.getText().toString();
 		
-		
-		ClaimsListController.updateClaim(index, startDate, endDate, description);
+		//update the claim and modify index to reflect its new location
+		index=ClaimsListController.updateClaim(index, startDate, endDate, description);
 		ClaimsListController.saveClaims();
 	}
 	

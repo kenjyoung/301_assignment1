@@ -83,8 +83,9 @@ public class EditExpenseActivity extends Activity {
 		String currency=(String) currencySpinner.getSelectedItem();
 		BigDecimal amount=new BigDecimal(amountText.getText().toString());
 		
-		ClaimsListController.getClaim(claimIndex).getExpense(expenseIndex).
-			updateInfo(date, category, description, amount, currency);
+		//update expense and modify expenseIndex to reflect its new location
+		expenseIndex=ClaimsListController.getClaim(claimIndex).updateExpense(expenseIndex
+				, date, category, description, amount, currency);
 		ClaimsListController.saveClaims();
 	}
 	
