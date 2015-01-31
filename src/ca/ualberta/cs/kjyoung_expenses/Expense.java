@@ -30,6 +30,7 @@ public class Expense implements Comparable<Expense>{
 		this.amount=new BigDecimal(0).setScale(2,BigDecimal.ROUND_HALF_EVEN);
 		this.currency="NA";
 	}
+	
 	public Expense(GregorianCalendar date, String category, String description, 
 			BigDecimal amount, String currency) {
 		super();
@@ -39,36 +40,47 @@ public class Expense implements Comparable<Expense>{
 		this.amount=amount.setScale(2,BigDecimal.ROUND_HALF_EVEN);
 		this.currency=currency;
 	}
+	
 	public GregorianCalendar getDate() {
 		return date;
 	}
+	
 	public void setDate(GregorianCalendar date) {
 		this.date = date;
 	}
+	
 	public String getCategory() {
 		return category;
 	}
+	
 	public void setCategory(String category) {
 		this.category = category;
 	}
+	
 	public String getDescription() {
 		return description;
 	}
+	
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 	public BigDecimal getAmount() {
 		return amount;
 	}
+	
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount.setScale(2,BigDecimal.ROUND_HALF_EVEN);
 	}
+	
 	public String getCurrency() {
 		return currency;
 	}
+	
 	public void setCurrency(String currency) {
 		this.currency = currency;
 	}
+	
 	public static ArrayList<String> getCurrencies() {
 		return currencies;
 	}

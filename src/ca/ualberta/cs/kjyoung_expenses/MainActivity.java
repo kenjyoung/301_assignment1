@@ -72,7 +72,7 @@ public class MainActivity extends Activity {
 							 ClaimsListController.saveClaims();
 						 }
 						 else{
-							 TravelClaim claim=ClaimsListController.getClaims().get(index);
+							 TravelClaim claim=ClaimsListController.getClaim(index);
 							 int status=claim.getStatus();
 							 Intent intent;
 							 if(status==1){

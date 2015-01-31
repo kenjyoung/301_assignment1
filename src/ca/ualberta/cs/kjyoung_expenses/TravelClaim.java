@@ -20,9 +20,11 @@ public class TravelClaim implements Comparable<TravelClaim>{
 	private String description;
 	private Byte status; //this is stored as a numerical value to allow easier computation
 	private ArrayList<Expense> expenses;
+	
 	public ArrayList<Expense> getExpenses() {
 		return expenses;
 	}
+	
 	public TravelClaim(GregorianCalendar startDate, GregorianCalendar endDate, String description) {
 		super();
 		this.startDate=startDate;
@@ -31,6 +33,7 @@ public class TravelClaim implements Comparable<TravelClaim>{
 		this.status=0;
 		this.expenses=new ArrayList <Expense>();
 	}
+	
 	public TravelClaim(){
 		super();
 		this.startDate=new GregorianCalendar();
@@ -39,24 +42,31 @@ public class TravelClaim implements Comparable<TravelClaim>{
 		this.status=0;
 		this.expenses=new ArrayList <Expense>();
 	}
+	
 	public GregorianCalendar getStartDate() {
 		return startDate;
 	}
+	
 	public void setStartDate(GregorianCalendar startDate) {
 		this.startDate = startDate;
 	}
+	
 	public GregorianCalendar getEndDate() {
 		return endDate;
 	}
+	
 	public void setEndDate(GregorianCalendar endDate) {
 		this.endDate = endDate;
 	}
+	
 	public String getDescription() {
 		return description;
 	}
+	
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 	public Byte getStatus() {
 		return status;
 	}
@@ -78,8 +88,13 @@ public class TravelClaim implements Comparable<TravelClaim>{
 		}
 		return status;
 	}
+	
 	public void setStatus(Byte status) {
 		this.status = status;
+	}
+	
+	public Expense getExpense(int index){
+		return this.getExpenses().get(index);
 	}
 	
 	//convenient way to change basic info when editing claim information
@@ -89,8 +104,9 @@ public class TravelClaim implements Comparable<TravelClaim>{
 		this.description=description;
 	}
 	
-	public void updateExpense(int index, Expense expense){
-		getExpenses().set(index, expense);
+	public void updateExpense(int index, GregorianCalendar date, String category, 
+			String description, BigDecimal amount, String currency){
+		getExpenses().get(index).updateInfo(date, category, description, amount, currency);
 		Collections.sort(expenses);
 	}
 	
@@ -119,9 +135,11 @@ public class TravelClaim implements Comparable<TravelClaim>{
 		Collections.sort(expenses);
 		return expenses.indexOf(expense);
 	}
+	
 	public void removeExpense(int index){
 		expenses.remove(index);
 	}
+	
 	//writes out the description along with currency totals and status on separate lines
 	//for convenient listing of claims
 	public String toString(){
@@ -150,6 +168,7 @@ public class TravelClaim implements Comparable<TravelClaim>{
 				formatter.format(this.getEndDate().getTime());
 		return str;
 	}
+	
 	@Override
 	public int compareTo(TravelClaim other) {
 		return this.getStartDate().compareTo(other.getStartDate());

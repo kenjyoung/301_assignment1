@@ -1,56 +1,28 @@
 package ca.ualberta.cs.kjyoung_expenses;
 
-import java.text.DateFormat;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.view.View;
 
-public class DisplayClaimApprovedActivity extends Activity {
+public class DisplayClaimApprovedActivity extends DisplayClaimActivity {
 	//One of three activities that displays the info for a claim and its expenses.
-	//These might benefit from setting up an inheritance hierarchy but it didn't seem worthwhile
-	//for the time being. The onStart method ensures that all the displayed data is up to date
-	//whenever this activity is returned to.
+	//Inherits from the class DisplayClaimActivity..
 	//This one is for an approved activity and hence it is read only, all editing capabilities
 	//are removed and the only action available is to send the claim's info via email
 	
-	private int index;
-	private TravelClaim claim;
-	private ArrayAdapter<Expense> expenseAdapter;
-	private ListView expenseList;
-	private TextView claimNameText;
-	private TextView startDateText;
-	private TextView endDateText;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_display_claim_approved);
-		claimNameText = (TextView)findViewById(R.id.claimName);
-		startDateText = (TextView)findViewById(R.id.startDate);
-		endDateText = (TextView)findViewById(R.id.endDate);
-		ClaimsListManager.initManager(this.getApplicationContext());
-		index=getIntent().getIntExtra("index",0);
-		claim=ClaimsListController.getClaims().get(index);
-		expenseList=(ListView) findViewById(R.id.expensesList);
-		expenseAdapter = new ArrayAdapter<Expense>(this,
-				R.layout.list_item, claim.getExpenses());
-		expenseList.setAdapter(expenseAdapter);
+		super.onCreate(savedInstanceState);
 	}
 	
-	protected void onStart(){
-		super.onStart();
-		claim=ClaimsListController.getClaims().get(index);
-		claimNameText.setText(claim.getDescription());
-		DateFormat formatter=DateFormat.getDateInstance();
-		startDateText.setText(formatter.format(claim.getStartDate().getTime()));
-		endDateText.setText(formatter.format(claim.getEndDate().getTime()));
-		expenseAdapter.notifyDataSetChanged();
-		}
-
+	public void sendClick(View view){
+		ClaimsListController.sendClaim(index);
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

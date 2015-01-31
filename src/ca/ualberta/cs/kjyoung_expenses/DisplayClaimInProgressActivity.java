@@ -2,7 +2,6 @@ package ca.ualberta.cs.kjyoung_expenses;
 
 import java.text.DateFormat;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -11,56 +10,34 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 
-public class DisplayClaimInProgressActivity extends Activity {
+public class DisplayClaimInProgressActivity extends DisplayClaimActivity {
 	//One of three activities that displays the info for a claim and its expenses.
-	//These might benefit from setting up an inheritance hierarchy but it didn't seem worthwhile
-	//for the time being. The onStart method ensures that all the displayed data is up to date
-	//whenever this activity is returned to.
+	//Inherits from the class DisplayClaimActivity.
 	//This one is for an in progress/returned claim so it allows editing of the claim name and dates
 	//via an edit button, as well as addition and removal of expenses via two buttons, and editing
 	//of individual expenses simply by clicking on them. In addition it provides a send button to
 	//send the claim info and expenses as an email via an appropriate app, along with a submit
 	//button which sets the status to submitted.
 	
-	private int index;
-	private TravelClaim claim;
-	private ArrayAdapter<Expense> expenseAdapter;
-	private ListView expenseList;
-	private TextView claimNameText;
-	private TextView startDateText;
-	private TextView endDateText;
 	private boolean deleteMode=false;
 	private Drawable buttonDefault;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_display_claim_in_progress);
-		claimNameText = (TextView)findViewById(R.id.claimName);
-		startDateText = (TextView)findViewById(R.id.startDate);
-		endDateText = (TextView)findViewById(R.id.endDate);
-		ClaimsListManager.initManager(this.getApplicationContext());
-		index=getIntent().getIntExtra("index",0);
-		claim=ClaimsListController.getClaims().get(index);
-		expenseList=(ListView) findViewById(R.id.expensesList);
-		expenseAdapter = new ArrayAdapter<Expense>(this,
-				R.layout.list_item, claim.getExpenses());
-		expenseList.setAdapter(expenseAdapter);
+		super.onCreate(savedInstanceState);
 		
 		expenseList.setOnItemClickListener(new OnItemClickListener(){
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,int expenseIndex,
 					long id){
 						 if(deleteMode){
-							 claim.getExpenses().remove(expenseIndex);
+							 claim.removeExpense(expenseIndex);
 							 expenseAdapter.notifyDataSetChanged();
 							 ClaimsListController.saveClaims();
 						 }
@@ -77,20 +54,13 @@ public class DisplayClaimInProgressActivity extends Activity {
 	
 	protected void onStart(){
 		super.onStart();
-		claim=ClaimsListController.getClaims().get(index);
+		claim=ClaimsListController.getClaim(index);
 		claimNameText.setText(claim.getDescription());
 		DateFormat formatter=DateFormat.getDateInstance();
 		startDateText.setText(formatter.format(claim.getStartDate().getTime()));
 		endDateText.setText(formatter.format(claim.getEndDate().getTime()));
 		expenseAdapter.notifyDataSetChanged();
 		}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.expenses_list, menu);
-		return true;
-	}
 	
 	public void editClaim(View view){
 		 Intent intent= new Intent(this, EditClaimActivity.class);
@@ -131,6 +101,13 @@ public class DisplayClaimInProgressActivity extends Activity {
 		finish();
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.expenses_list, menu);
+		return true;
+	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will

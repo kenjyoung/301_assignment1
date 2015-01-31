@@ -99,6 +99,7 @@
 		    android:layout_height="wrap_content"
 		    android:layout_above="@+id/claimName"
 		    android:layout_centerHorizontal="true"
-		    android:text="@string/send" />
+		    android:text="@string/send" 
+		    android:onClick="sendClick"/>
 
 </RelativeLayout>

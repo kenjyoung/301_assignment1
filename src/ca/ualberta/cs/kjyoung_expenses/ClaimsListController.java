@@ -2,6 +2,7 @@ package ca.ualberta.cs.kjyoung_expenses;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.GregorianCalendar;
 
 
 public class ClaimsListController{
@@ -11,6 +12,7 @@ public class ClaimsListController{
 	//as well as to load from disk and send contained claims via email.
 	
 	private static ArrayList <TravelClaim> claims=null;
+	
 	//singleton pattern for accessing controller
 	public static ArrayList <TravelClaim> getClaims(){
 		if(claims ==null){
@@ -18,6 +20,10 @@ public class ClaimsListController{
 		}
 		Collections.sort(claims);
 		return claims;
+	}
+	
+	public static TravelClaim getClaim(int index){
+		return ClaimsListController.getClaims().get(index);
 	}
 	
 	//add a claim to the claims list and return the index it ends up at after sorting
@@ -30,6 +36,14 @@ public class ClaimsListController{
 	//delete a claim with a given index in the list
 	public static void deleteClaim(int index){
 		ClaimsListController.getClaims().remove(index);
+	}
+	
+	public static void updateClaim(int index, GregorianCalendar startDate, 
+			GregorianCalendar endDate, String description){
+		ClaimsListController.getClaims().get(index).updateInfo(
+				startDate, endDate, description);
+		Collections.sort(claims);
+		
 	}
 	
 	//call the manager to open a claim at a given index in a mail app

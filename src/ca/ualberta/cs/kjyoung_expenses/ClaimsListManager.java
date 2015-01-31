@@ -27,7 +27,6 @@ public class ClaimsListManager {
 	
 	private Context context;
 	private static final String FILENAME = "file.sav";
-	
 	private static ClaimsListManager claimsListManager=null;
 	
 	//provide the manager with a context nessesary for completing its operations
@@ -76,7 +75,7 @@ public class ClaimsListManager {
 	}
 	
 	//Taken from https://github.com/joshua2ua/lonelyTwitter on Jan 24 2015 and modified
-	//uses gson to save the entire claimslist to disk for later retrieval
+	//uses gson to save the entire claims list to disk for later retrieval
 	public void saveClaims(ArrayList<TravelClaim> claims){
 		Gson gson = new Gson();
 		try {
@@ -94,6 +93,8 @@ public class ClaimsListManager {
 		}
 	}
 	
+	//create a string containing all the info for the given claim and its expenses and
+	//send it to an email app chosen by the user as the body of an email
 	public void sendClaim(TravelClaim claim){
 		String body;
 		DateFormat formatter=DateFormat.getDateInstance();
@@ -120,7 +121,7 @@ public class ClaimsListManager {
 		try {
 		    context.startActivity(i);
 		} catch (android.content.ActivityNotFoundException ex) {
-		    Toast.makeText(context, "There are no email clients installed.",
+		    Toast.makeText(context, "No email client found.",
 		    		Toast.LENGTH_SHORT).show();
 		}
 		

@@ -18,7 +18,8 @@ public class EditExpenseActivity extends Activity {
 	//currently contained in the expense and also fetches the appropriate expense, from
 	//within the appropriate claim using the two indices passed via the intent.
 	
-	private Expense expense;
+	private int claimIndex;
+	private int expenseIndex;
 	private DatePicker datePicker;
 	private Spinner currencySpinner;
 	private Spinner categorySpinner;
@@ -30,8 +31,8 @@ public class EditExpenseActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_expense);
 		ClaimsListManager.initManager(this.getApplicationContext());
-		int claimIndex=getIntent().getIntExtra("claimIndex",0);
-		int expenseIndex=getIntent().getIntExtra("expenseIndex",0);
+		claimIndex=getIntent().getIntExtra("claimIndex",0);
+		expenseIndex=getIntent().getIntExtra("expenseIndex",0);
 		datePicker=(DatePicker) findViewById(R.id.expenseDate);
 		currencySpinner=(Spinner) findViewById(R.id.currencySelector);
 		categorySpinner=(Spinner) findViewById(R.id.categorySelector);
@@ -46,8 +47,7 @@ public class EditExpenseActivity extends Activity {
 				Expense.getCategories());
 		categorySpinner.setAdapter(categoryAdapter);
 		
-		expense=ClaimsListController.getClaims().get(claimIndex).getExpenses().
-				get(expenseIndex);
+		Expense expense=ClaimsListController.getClaim(claimIndex).getExpense(expenseIndex);
 		GregorianCalendar date=expense.getDate();
 		String description=expense.getDescription();
 		String category=expense.getCategory();
@@ -83,9 +83,9 @@ public class EditExpenseActivity extends Activity {
 		String currency=(String) currencySpinner.getSelectedItem();
 		BigDecimal amount=new BigDecimal(amountText.getText().toString());
 		
-		expense.updateInfo(date, category, description, amount, currency);
+		ClaimsListController.getClaim(claimIndex).getExpense(expenseIndex).
+			updateInfo(date, category, description, amount, currency);
 		ClaimsListController.saveClaims();
-		finish();
 	}
 	
 	@Override
@@ -102,5 +102,6 @@ public class EditExpenseActivity extends Activity {
 	
 	public void saveClick(View view){
 		saveExpense();
+		finish();
 	}
 }
