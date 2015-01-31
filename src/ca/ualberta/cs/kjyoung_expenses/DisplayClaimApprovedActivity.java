@@ -11,6 +11,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class DisplayClaimApprovedActivity extends Activity {
+	//One of three activities that displays the info for a claim and its expenses.
+	//These might benefit from setting up an inheritance hierarchy but it didn't seem worthwhile
+	//for the time being.
+	//This one is for an approved activity and hence it is read only, all editing capabilities
+	//are removed and the only action available is to send the claim's info via email
+	
 	private int index;
 	private TravelClaim claim;
 	private ArrayAdapter<Expense> expenseAdapter;

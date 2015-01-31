@@ -17,13 +17,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
-//This class largely borrowed from https://github.com/abramhindle/student-picker/blob/master/src/ca/softwareprocess/studentpicker/StudentListManager.java, Jan 25 2015
+
 public class ClaimsListManager {
+	//This class largely borrowed from https://github.com/abramhindle/student-picker/blob/master/src/ca/softwareprocess/studentpicker/StudentListManager.java, Jan 25 2015
+	//Like ClaimsListController it follows a singleton pattern. It provides an interface layer
+	//between the ClaimsListContoller and the android OS. It handles the actual saving and 
+	//loading of claims, along with sending emails. It must be initialized with a context from
+	//a running activity in order to work.
+	
 	private Context context;
 	private static final String FILENAME = "file.sav";
 	
 	private static ClaimsListManager claimsListManager=null;
 	
+	//provide the manager with a context nessesary for completing its operations
 	public static void initManager(Context context){
 		if(claimsListManager==null){
 			if(context==null){
@@ -33,6 +40,7 @@ public class ClaimsListManager {
 		}
 	}
 	
+	//singleton pattern for accessing manager
 	public static ClaimsListManager getManager(){
 		if(claimsListManager==null){
 			throw new RuntimeException("Did not initialize Manager.");
@@ -45,6 +53,7 @@ public class ClaimsListManager {
 	}
 	
 	//Taken from https://github.com/joshua2ua/lonelyTwitter on Jan 24 2015 and modified
+	//uses gson to load saved claims from disk and returns the loaded list
 	public ArrayList<TravelClaim> loadClaims(){
 		Gson gson = new Gson();
 		ArrayList<TravelClaim> claims = new ArrayList<TravelClaim>();
@@ -67,6 +76,7 @@ public class ClaimsListManager {
 	}
 	
 	//Taken from https://github.com/joshua2ua/lonelyTwitter on Jan 24 2015 and modified
+	//uses gson to save the entire claimslist to disk for later retrieval
 	public void saveClaims(ArrayList<TravelClaim> claims){
 		Gson gson = new Gson();
 		try {

@@ -3,9 +3,15 @@ package ca.ualberta.cs.kjyoung_expenses;
 import java.util.ArrayList;
 import java.util.Collections;
 
-//This class largely borrowed from https://github.com/abramhindle/student-picker/blob/master/src/ca/softwareprocess/studentpicker/StudentListController.java, Jan 25 2015
+
 public class ClaimsListController{
+	//This class largely borrowed from https://github.com/abramhindle/student-picker/blob/master/src/ca/softwareprocess/studentpicker/StudentListController.java, Jan 25 2015
+	//It follows a singleton pattern to make an ArrayList of travel claims accessible
+	//to the whole application. It also provides several methods to manipulate this list,
+	//as well as to load from disk and send contained claims via email.
+	
 	private static ArrayList <TravelClaim> claims=null;
+	//singleton pattern for accessing controller
 	public static ArrayList <TravelClaim> getClaims(){
 		if(claims ==null){
 			claims=ClaimsListManager.getManager().loadClaims();
@@ -21,21 +27,18 @@ public class ClaimsListController{
 		return claims.indexOf(claim);
 	}
 	
-	//this is broken somehow, figure it out
+	//delete a claim with a given index in the list
 	public static void deleteClaim(int index){
 		ClaimsListController.getClaims().remove(index);
 	}
 	
-	public static void updateClaim(int index, TravelClaim claim){
-		getClaims().set(index, claim);
-		Collections.sort(claims);
-	}
-	
+	//call the manager to open a claim at a given index in a mail app
 	public static void sendClaim(int index){
 		ClaimsListManager.getManager().sendClaim(claims.get(index));
 	}
 	
+	//call the manager to save all the claims to disk
 	public static void saveClaims() {
-			ClaimsListManager.getManager().saveClaims(claims);
+		ClaimsListManager.getManager().saveClaims(claims);
 	}
 }

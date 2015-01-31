@@ -18,7 +18,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
+
 public class DisplayClaimInProgressActivity extends Activity {
+	//One of three activities that displays the info for a claim and its expenses.
+	//These might benefit from setting up an inheritance hierarchy but it didn't seem worthwhile
+	//for the time being.
+	//This one is for an in progress/returned claim so it allows editing of the claim name and dates
+	//via an edit button, as well as addition and removal of expenses via two buttons, and editing
+	//of individual expenses simply by clicking on them. In addition it provides a send button to
+	//send the claim info and expenses as an email via an appropriate app, along with a submit
+	//button which sets the status to submitted.
+	
 	private int index;
 	private TravelClaim claim;
 	private ArrayAdapter<Expense> expenseAdapter;
@@ -114,6 +124,7 @@ public class DisplayClaimInProgressActivity extends Activity {
 	
 	public void submitClick(View view){
 		claim.setStatus((byte) 1);
+		ClaimsListController.saveClaims();
 		Toast.makeText(this, "Claim submitted",
 	    		Toast.LENGTH_SHORT).show();
 		finish();

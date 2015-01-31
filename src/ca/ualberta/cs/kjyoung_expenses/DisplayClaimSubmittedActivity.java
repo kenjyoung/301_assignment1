@@ -13,6 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class DisplayClaimSubmittedActivity extends Activity {
+	//One of three activities that displays the info for a claim and its expenses.
+	//These might benefit from setting up an inheritance hierarchy but it didn't seem worthwhile
+	//for the time being.
+	//This one is for a submitted activity so it does not allow any editing but does allow 
+	//sending as an email, along with either returning or accepting which sets the status
+	//appropriately
+	
 	private int index;
 	private TravelClaim claim;
 	private ArrayAdapter<Expense> expenseAdapter;
@@ -59,6 +66,7 @@ public class DisplayClaimSubmittedActivity extends Activity {
 	
 	public void acceptClick(View view){
 		claim.setStatus((byte) 3);
+		ClaimsListController.saveClaims();
 		Toast.makeText(this, "Claim approved",
 	    		Toast.LENGTH_SHORT).show();
 		finish();
@@ -66,6 +74,7 @@ public class DisplayClaimSubmittedActivity extends Activity {
 	
 	public void returnClick(View view){
 		claim.setStatus((byte) 2);
+		ClaimsListController.saveClaims();
 		Toast.makeText(this, "Claim returned",
 	    		Toast.LENGTH_SHORT).show();
 		finish();
