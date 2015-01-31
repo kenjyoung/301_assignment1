@@ -10,7 +10,12 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 
 public class EditClaimActivity extends Activity {
-	private int index;
+	//This activity allows the user to edit the basic info (date range and description) of a
+	//clicked claim, or a newly created claim. On create initializes all the displayed info
+	//to be equal to the info currently contained in the claim, and also fetches the
+	//appropriate claim using the index passed via the intent.
+	
+	private TravelClaim claim;
 	DatePicker startDP;
 	DatePicker endDP;
 	EditText descriptionText;
@@ -20,11 +25,11 @@ public class EditClaimActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_claim);
 		ClaimsListManager.initManager(this.getApplicationContext());
-		index=getIntent().getIntExtra("index",0);
+		int index=getIntent().getIntExtra("index",0);
 		startDP=(DatePicker) findViewById(R.id.startDate);
 		endDP=(DatePicker) findViewById(R.id.endDate);
 		descriptionText=(EditText) findViewById(R.id.claimDescriptionBody);
-		TravelClaim claim=ClaimsListController.getClaims().get(index);
+		claim=ClaimsListController.getClaims().get(index);
 		GregorianCalendar startDate=claim.getStartDate();
 		GregorianCalendar endDate=claim.getEndDate();
 		String description=claim.getDescription();
@@ -70,7 +75,7 @@ public class EditClaimActivity extends Activity {
 		String description=descriptionText.getText().toString();
 		
 		
-		ClaimsListController.getClaims().get(index).updateInfo(startDate, endDate, description);
+		claim.updateInfo(startDate, endDate, description);
 		ClaimsListController.saveClaims();
 		finish();
 	}

@@ -33,6 +33,16 @@ import android.widget.Button;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
+	//This is the main activity that opens when the application is started. It loads and then
+	//Displays the currently saved list of travel claims int the onCreate method. It also
+	//sets the onItemClickListener to detect when an item in the list is clicked. The 
+	//onItemClick behavior depends first on whether deleteMode is toggled on (in which case
+	//the clicked claim is simply deleted), and second on the current status of the clicked
+	//claim. It will open the claim in the appropriate activity depending on this status. 
+	//The onStart method simply notifies the adapter for the claimsList that the underlying
+	//dataset has changed since whenever the user navigates away from this activity within
+	//the application it generally results in a modification to the dataset.
+	
 	private ListView claimsList;
 	private ArrayAdapter<TravelClaim> claimAdapter;
 	private Boolean deleteMode=false; 

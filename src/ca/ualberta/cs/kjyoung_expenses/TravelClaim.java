@@ -10,10 +10,15 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class TravelClaim implements Comparable<TravelClaim>{
+	//This class maintains a list of travel expenses sorted by date called a travel claim. 
+	//In addition to the list of expenses it stores basic claim info (date range, status, 
+	//description). It also contains several methods for operating on the claim data and 
+	//displaying it in various ways.
+	
 	private GregorianCalendar startDate;
 	private GregorianCalendar endDate;
 	private String description;
-	private Byte status;
+	private Byte status; //this is stored as a numerical value to allow easier computation
 	private ArrayList<Expense> expenses;
 	public ArrayList<Expense> getExpenses() {
 		return expenses;
@@ -55,6 +60,8 @@ public class TravelClaim implements Comparable<TravelClaim>{
 	public Byte getStatus() {
 		return status;
 	}
+	
+	//return the string representing the interpretation of a specific status
 	public String getStatusString(){
 		String status;
 		switch(this.getStatus()){
@@ -87,6 +94,8 @@ public class TravelClaim implements Comparable<TravelClaim>{
 		Collections.sort(expenses);
 	}
 	
+	//return a map from each currency used in an expense to the total value of that currency
+	//spend over the whole claim
 	public HashMap <String, BigDecimal> getTotals(){
 		HashMap<String, BigDecimal> totals= new HashMap<String, BigDecimal>();
 		Expense expense;

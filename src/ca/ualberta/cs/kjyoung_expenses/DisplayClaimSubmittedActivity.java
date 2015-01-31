@@ -15,10 +15,11 @@ import android.widget.Toast;
 public class DisplayClaimSubmittedActivity extends Activity {
 	//One of three activities that displays the info for a claim and its expenses.
 	//These might benefit from setting up an inheritance hierarchy but it didn't seem worthwhile
-	//for the time being.
+	//for the time being. The onStart method ensures that all the displayed data is up to date
+	//whenever this activity is returned to.
 	//This one is for a submitted activity so it does not allow any editing but does allow 
 	//sending as an email, along with either returning or accepting which sets the status
-	//appropriately
+	//appropriately.
 	
 	private int index;
 	private TravelClaim claim;

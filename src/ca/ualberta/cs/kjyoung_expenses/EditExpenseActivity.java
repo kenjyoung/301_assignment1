@@ -13,9 +13,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 public class EditExpenseActivity extends Activity {
+	//This activity allows the user to edit all info in a specific (clicked or newly created)
+	//expense within a claim. On create initializes the displayed info to reflect the info
+	//currently contained in the expense and also fetches the appropriate expense, from
+	//within the appropriate claim using the two indices passed via the intent.
+	
 	private Expense expense;
-	private int claimIndex;
-	private int expenseIndex;
 	private DatePicker datePicker;
 	private Spinner currencySpinner;
 	private Spinner categorySpinner;
@@ -27,8 +30,8 @@ public class EditExpenseActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_expense);
 		ClaimsListManager.initManager(this.getApplicationContext());
-		claimIndex=getIntent().getIntExtra("claimIndex",0);
-		expenseIndex=getIntent().getIntExtra("expenseIndex",0);
+		int claimIndex=getIntent().getIntExtra("claimIndex",0);
+		int expenseIndex=getIntent().getIntExtra("expenseIndex",0);
 		datePicker=(DatePicker) findViewById(R.id.expenseDate);
 		currencySpinner=(Spinner) findViewById(R.id.currencySelector);
 		categorySpinner=(Spinner) findViewById(R.id.categorySelector);
@@ -43,7 +46,8 @@ public class EditExpenseActivity extends Activity {
 				Expense.getCategories());
 		categorySpinner.setAdapter(categoryAdapter);
 		
-		expense=ClaimsListController.getClaims().get(claimIndex).getExpenses().get(expenseIndex);
+		expense=ClaimsListController.getClaims().get(claimIndex).getExpenses().
+				get(expenseIndex);
 		GregorianCalendar date=expense.getDate();
 		String description=expense.getDescription();
 		String category=expense.getCategory();
@@ -51,8 +55,8 @@ public class EditExpenseActivity extends Activity {
 		String amount=expense.getAmount().toString();
 		
 		
-		datePicker.updateDate(date.get(GregorianCalendar.YEAR),date.get(GregorianCalendar.MONTH),
-				date.get(GregorianCalendar.DAY_OF_MONTH));
+		datePicker.updateDate(date.get(GregorianCalendar.YEAR),date.get(
+				GregorianCalendar.MONTH),date.get(GregorianCalendar.DAY_OF_MONTH));
 		currencySpinner.setSelection(currencyAdapter.getPosition(currency));
 		categorySpinner.setSelection(categoryAdapter.getPosition(category));
 		descriptionText.setText(description);
@@ -65,19 +69,21 @@ public class EditExpenseActivity extends Activity {
 		getMenuInflater().inflate(R.menu.expense_edit, menu);
 		return true;
 	}
+	
+	public void onPause(){
+		super.onPause();
+		saveExpense();
+	}
 
 	public void saveExpense(){
-		GregorianCalendar date=new GregorianCalendar(datePicker.getYear(),datePicker.getMonth(),
-				datePicker.getDayOfMonth());
+		GregorianCalendar date=new GregorianCalendar(datePicker.getYear(),
+				datePicker.getMonth(),datePicker.getDayOfMonth());
 		String description=descriptionText.getText().toString();
 		String category=(String) categorySpinner.getSelectedItem();
 		String currency=(String) currencySpinner.getSelectedItem();
 		BigDecimal amount=new BigDecimal(amountText.getText().toString());
 		
-		Expense expense=new Expense(date, category, description, 
-			amount, currency);
-		TravelClaim claim=ClaimsListController.getClaims().get(claimIndex);
-		claim.updateExpense(expenseIndex,expense);
+		expense.updateInfo(date, category, description, amount, currency);
 		ClaimsListController.saveClaims();
 		finish();
 	}

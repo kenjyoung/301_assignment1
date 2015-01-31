@@ -6,6 +6,14 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 public class Expense implements Comparable<Expense>{
+	//This class represents the individual expense items contained within a travel claim.
+	//it contains all the basic info required for an expense item along with methods to 
+	//operate on it. It also contains two static attributes for defining the selectable
+	//currencies and categories for an expense item, at the moment this list is statically
+	//retrieved from the string resource file but could easily be changed to allow the user
+	//to modify it at runtime. The toString method returns a string listing all the expense
+	//info in a human readable form to be printed to the expenses list.
+	
 	private GregorianCalendar date;
 	private String category;
 	private String description;
@@ -86,6 +94,15 @@ public class Expense implements Comparable<Expense>{
 	public static void setCategories(ArrayList<String> categories){
 		Expense.categories=categories;
 		
+	}
+	
+	public void updateInfo(GregorianCalendar date, String category, String description, 
+			BigDecimal amount, String currency){
+		this.date=date;
+		this.category=category;
+		this.description=description;
+		this.amount=amount.setScale(2,BigDecimal.ROUND_HALF_EVEN);
+		this.currency=currency;
 	}
 	
 	@Override
