@@ -47,11 +47,11 @@
                 android:value="MainActivity" />
         </activity>
         <activity
-            android:name=".DisplayClaimSubmitedActivity"
+            android:name=".DisplayClaimSubmittedActivity"
             android:label="@string/title_activity_claim_accept_return" >
         </activity>
         <activity
-            android:name=".DisplayClaimAcceptedActivity"
+            android:name=".DisplayClaimApprovedActivity"
             android:label="@string/title_activity_display_claim_accepted" >
         </activity>
     </application>

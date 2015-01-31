@@ -3,9 +3,6 @@ package ca.ualberta.cs.kjyoung_expenses;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import android.app.Activity;
-import android.widget.Toast;
-
 //This class largely borrowed from https://github.com/abramhindle/student-picker/blob/master/src/ca/softwareprocess/studentpicker/StudentListController.java, Jan 25 2015
 public class ClaimsListController{
 	private static ArrayList <TravelClaim> claims=null;
@@ -34,7 +31,11 @@ public class ClaimsListController{
 		Collections.sort(claims);
 	}
 	
-	static public void saveClaims() {
+	public static void sendClaim(int index){
+		ClaimsListManager.getManager().sendClaim(claims.get(index));
+	}
+	
+	public static void saveClaims() {
 			ClaimsListManager.getManager().saveClaims(claims);
 	}
 }

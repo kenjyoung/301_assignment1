@@ -14,17 +14,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:onClick="saveClick"
-        android:text="save" />
+        android:text="@string/save" />
 
     <TextView
         android:id="@+id/categoryHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/saveExpenseButton"
-        android:text="Category:"
+        android:text="@string/category"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Spinner
@@ -32,15 +34,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/categoryHeader"
-        android:layout_toRightOf="@+id/categoryHeader" />
+        android:layout_toRightOf="@+id/categoryHeader"
+        android:layout_toEndOf="@+id/categoryHeader"  
+        />
 
     <TextView
         android:id="@+id/descriptionHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/categorySelector"
-        android:text="Description:"
+        android:text="@string/description"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -48,8 +53,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/descriptionHeader"
-        android:ems="10" >
+        android:ems="10" android:inputType="textAutoCorrect">
 
         <requestFocus />
     </EditText>
@@ -59,8 +65,9 @@
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_alignParentLeft="true"
+		        android:layout_alignParentStart="true"
 		        android:layout_below="@+id/descriptionBody"
-		        android:text="Date:"
+		        android:text="@string/date"
 		        android:textAppearance="?android:attr/textAppearanceMedium" />
     
     <DatePicker
@@ -69,15 +76,17 @@
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_below="@+id/expenseDateHeader"
-		        android:layout_alignParentLeft="true" />
+		        android:layout_alignParentLeft="true" 
+		        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/currencyHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/descriptionBody"
+        android:layout_alignStart="@+id/descriptionBody"
         android:layout_below="@+id/expenseDate"
-        android:text="Amount:"
+        android:text="@string/amount"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -86,6 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/currencyHeader"
         android:layout_toRightOf="@+id/currencyHeader"
+        android:layout_toEndOf="@+id/currencyHeader"
         android:ems="10"
         android:inputType="numberDecimal" />
 
@@ -95,6 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/currencyBody"
         android:layout_alignTop="@+id/currencyBody"
-        android:layout_toRightOf="@+id/currencyBody" />
+        android:layout_toRightOf="@+id/currencyBody"
+        android:layout_toEndOf="@+id/currencyBody" />
 
 </RelativeLayout>

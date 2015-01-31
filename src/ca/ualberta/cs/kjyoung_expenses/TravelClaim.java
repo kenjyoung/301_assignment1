@@ -1,6 +1,7 @@
 package ca.ualberta.cs.kjyoung_expenses;
 
 import java.math.BigDecimal;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.GregorianCalendar;
@@ -54,6 +55,22 @@ public class TravelClaim implements Comparable<TravelClaim>{
 	public Byte getStatus() {
 		return status;
 	}
+	public String getStatusString(){
+		String status;
+		switch(this.getStatus()){
+		case 0: status="in progress";
+				break;
+		case 1: status="submitted";
+				break;
+		case 2: status="returned";
+				break;
+		case 3: status="approved";
+				break;
+		default: status="unknown";
+				break;
+		}
+		return status;
+	}
 	public void setStatus(Byte status) {
 		this.status = status;
 	}
@@ -67,24 +84,26 @@ public class TravelClaim implements Comparable<TravelClaim>{
 	
 	public void updateExpense(int index, Expense expense){
 		getExpenses().set(index, expense);
+		Collections.sort(expenses);
 	}
 	
 	public HashMap <String, BigDecimal> getTotals(){
 		HashMap<String, BigDecimal> totals= new HashMap<String, BigDecimal>();
 		Expense expense;
-		for(int i=0;i<this.expenses.size();i++){
+		for(int i=0;i<this.getExpenses().size();i++){
 			expense=expenses.get(i);
 			String currency=expense.getCurrency();
 			BigDecimal amount=expense.getAmount();
 			if(totals.containsKey(currency)){
 				totals.put(currency,amount.add(totals.get(currency)));
 			}
+			else{
+				totals.put(currency, amount);
+			}
 		}
 		return totals;
 	}
-	public void send(String email){
-		
-	}
+	
 	//add an expense item and return its index after the expense list is sorted
 	public int addExpense(Expense expense){
 		expenses.add(expense);
@@ -108,7 +127,7 @@ public class TravelClaim implements Comparable<TravelClaim>{
 		else{
 			String currency=i.next();
 			BigDecimal amount=totals.get(currency);
-			str+=currency.toString()+" "+currency;
+			str+=amount.toString()+" "+currency;
 		
 			while(i.hasNext()){
 				currency=i.next();
@@ -116,20 +135,10 @@ public class TravelClaim implements Comparable<TravelClaim>{
 				str+=", "+amount.toString()+" "+currency;
 			}
 		}
-		String status;
-		switch(this.getStatus()){
-		case 0: status="in progress";
-				break;
-		case 1: status="submitted";
-				break;
-		case 2: status="returned";
-				break;
-		case 3: status="approved";
-				break;
-		default: status="unknown";
-				break;
-		}
-		str+="\nstatus: "+status;
+		str+="\nstatus: "+getStatusString();
+		DateFormat formatter=DateFormat.getDateInstance();
+		str+="\n"+formatter.format(this.getStartDate().getTime())+" to "+
+				formatter.format(this.getEndDate().getTime());
 		return str;
 	}
 	@Override

@@ -3,22 +3,16 @@ package ca.ualberta.cs.kjyoung_expenses;
 import java.text.DateFormat;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
-public class DisplayClaimInProgressActivity extends Activity {
+public class DisplayClaimSubmittedActivity extends Activity {
 	private int index;
 	private TravelClaim claim;
 	private ArrayAdapter<Expense> expenseAdapter;
@@ -26,13 +20,10 @@ public class DisplayClaimInProgressActivity extends Activity {
 	private TextView claimNameText;
 	private TextView startDateText;
 	private TextView endDateText;
-	private boolean deleteMode=false;
-	private Drawable buttonDefault;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_display_claim_in_progress);
+		setContentView(R.layout.activity_display_claim_submitted);
 		claimNameText = (TextView)findViewById(R.id.claimName);
 		startDateText = (TextView)findViewById(R.id.startDate);
 		endDateText = (TextView)findViewById(R.id.endDate);
@@ -43,25 +34,6 @@ public class DisplayClaimInProgressActivity extends Activity {
 		expenseAdapter = new ArrayAdapter<Expense>(this,
 				R.layout.list_item, claim.getExpenses());
 		expenseList.setAdapter(expenseAdapter);
-		
-		expenseList.setOnItemClickListener(new OnItemClickListener(){
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,int expenseIndex,
-					long id){
-						 if(deleteMode){
-							 claim.getExpenses().remove(expenseIndex);
-							 expenseAdapter.notifyDataSetChanged();
-							 ClaimsListController.saveClaims();
-						 }
-						 else{
-							 Intent intent= new Intent(view.getContext(), EditExpenseActivity.class);
-							 intent.putExtra("claimIndex", index);
-							 intent.putExtra("expenseIndex", expenseIndex);
-							 startActivity(intent);
-						 }
-					}
-		});
-		
 	}
 	
 	protected void onStart(){
@@ -77,44 +49,24 @@ public class DisplayClaimInProgressActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.expenses_list, menu);
+		getMenuInflater().inflate(R.menu.claim_accept_return, menu);
 		return true;
-	}
-	
-	public void editClaim(View view){
-		 Intent intent= new Intent(this, EditClaimActivity.class);
-		 intent.putExtra("index",index);
-		 startActivity(intent);
-	}
-	
-	public void addExpense(View view){
-		Intent intent= new Intent(this, EditExpenseActivity.class);
-		int expenseIndex=claim.addExpense(new Expense());
-		intent.putExtra("claimIndex", index);
-		intent.putExtra("expenseIndex", expenseIndex);
-		startActivity(intent);
-		
-	}
-	
-	public void toggleDelete(View view){
-		deleteMode=!deleteMode;
-		
-		if(deleteMode){
-			buttonDefault=((Button)view).getBackground();
-			((Button)view).setBackgroundColor(Color.RED);
-		}
-		else{
-			((Button)view).setBackground(buttonDefault);
-		}
 	}
 	
 	public void sendClick(View view){
 		ClaimsListController.sendClaim(index);
 	}
 	
-	public void submitClick(View view){
-		claim.setStatus((byte) 1);
-		Toast.makeText(this, "Claim submitted",
+	public void acceptClick(View view){
+		claim.setStatus((byte) 3);
+		Toast.makeText(this, "Claim approved",
+	    		Toast.LENGTH_SHORT).show();
+		finish();
+	}
+	
+	public void returnClick(View view){
+		claim.setStatus((byte) 2);
+		Toast.makeText(this, "Claim returned",
 	    		Toast.LENGTH_SHORT).show();
 		finish();
 	}

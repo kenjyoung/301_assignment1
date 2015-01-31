@@ -56,7 +56,7 @@
 	    android:layout_alignParentStart="true"
 	    android:layout_marginRight="5dp"
 	    android:layout_marginLeft="5dp"
-	    android:text="From:"
+	    android:text="@string/from"
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
 
 	<TextView
@@ -64,11 +64,10 @@
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignBottom="@+id/from"
+	    android:layout_marginLeft="5dp"
+	    android:layout_marginRight="5dp"
 	    android:layout_toEndOf="@id/from"
 	    android:layout_toRightOf="@+id/from"
-	    android:layout_marginRight="5dp"
-	    android:layout_marginLeft="5dp"
-	    android:text="start"
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
 
 	<TextView
@@ -80,7 +79,7 @@
 	    android:layout_toRightOf="@id/startDate"
 	    android:layout_marginRight="5dp"
 	    android:layout_marginLeft="5dp"
-	    android:text="To:"
+	    android:text="@string/to"
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
 
 	<TextView
@@ -90,11 +89,10 @@
 	    android:layout_alignBottom="@+id/to"
 	    android:layout_alignParentEnd="true"
 	    android:layout_alignParentRight="true"
+	    android:layout_marginLeft="5dp"
+	    android:layout_marginRight="5dp"
 	    android:layout_toEndOf="@id/to"
 	    android:layout_toRightOf="@+id/to"
-	    android:layout_marginRight="5dp"
-	    android:layout_marginLeft="5dp"
-	    android:text="end"
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
 
 	<TextView
@@ -103,23 +101,24 @@
 	    android:layout_height="wrap_content"
 	    android:layout_above="@+id/startDate"
 	    android:layout_centerHorizontal="true"
-	    android:text="Claim Name"
 	    android:textAppearance="?android:attr/textAppearanceLarge" />
 
 		<Button
-	    android:id="@+id/sendButton"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignLeft="@+id/deleteExpenseButton"
-	    android:layout_above="@+id/claimName"
-	    android:text="Send" />
+		    android:id="@+id/sendButton"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_above="@+id/claimName"
+		    android:onClick="sendClick"
+		    android:text="@string/send" />
 		
 		<Button
-	    android:id="@+id/submitButton"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignTop="@+id/sendButton"
-	    android:layout_alignRight="@+id/addExpenseButton"
-	    android:text="Submit" />
+		    android:id="@+id/submitButton"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignEnd="@+id/addExpenseButton"
+		    android:layout_alignRight="@+id/addExpenseButton"
+		    android:layout_alignTop="@+id/sendButton"
+		    android:text="@string/submit" 
+		    android:onClick="submitClick"/>
 
 </RelativeLayout>

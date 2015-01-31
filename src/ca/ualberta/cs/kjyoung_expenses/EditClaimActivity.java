@@ -1,8 +1,6 @@
 package ca.ualberta.cs.kjyoung_expenses;
 
 import java.util.GregorianCalendar;
-import java.util.Date;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 public class EditClaimActivity extends Activity {
 	private int index;

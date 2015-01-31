@@ -18,7 +18,6 @@ package ca.ualberta.cs.kjyoung_expenses;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -63,7 +62,21 @@ public class MainActivity extends Activity {
 							 ClaimsListController.saveClaims();
 						 }
 						 else{
-							 Intent intent= new Intent(view.getContext(), DisplayClaimInProgressActivity.class);
+							 TravelClaim claim=ClaimsListController.getClaims().get(index);
+							 int status=claim.getStatus();
+							 Intent intent;
+							 if(status==1){
+								 intent= new Intent(view.getContext(), 
+										 DisplayClaimSubmittedActivity.class);
+							 }
+							 else if(status==3){
+								 intent= new Intent(view.getContext(), 
+										 DisplayClaimApprovedActivity.class); 
+							 }
+							 else{
+								 intent= new Intent(view.getContext(), 
+										 DisplayClaimInProgressActivity.class);
+							 }
 							 intent.putExtra("index",index);
 							 startActivity(intent);
 						 }

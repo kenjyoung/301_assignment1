@@ -2,7 +2,6 @@ package ca.ualberta.cs.kjyoung_expenses;
 
 import java.math.BigDecimal;
 import java.util.GregorianCalendar;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -55,7 +54,7 @@ public class EditExpenseActivity extends Activity {
 		datePicker.updateDate(date.get(GregorianCalendar.YEAR),date.get(GregorianCalendar.MONTH),
 				date.get(GregorianCalendar.DAY_OF_MONTH));
 		currencySpinner.setSelection(currencyAdapter.getPosition(currency));
-		categorySpinner.setSelection(currencyAdapter.getPosition(category));
+		categorySpinner.setSelection(categoryAdapter.getPosition(category));
 		descriptionText.setText(description);
 		amountText.setText(amount);
 	}

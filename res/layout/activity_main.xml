@@ -32,9 +32,9 @@
         android:layout_width="fill_parent"
         android:layout_height="263dp"
         android:layout_alignLeft="@+id/deleteClaimsButton"
+        android:layout_alignStart="@+id/deleteClaimsButton"
         android:layout_alignParentBottom="true"
         android:layout_below="@+id/deleteClaimsButton"
-        android:layout_weight="1"
         android:scrollbars="vertical" >
 
     </ListView>

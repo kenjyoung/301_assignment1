@@ -30,6 +30,7 @@
         <item>registration</item>
         <item>accommodation</item>
         <item>meal</item>
+        <item>other</item>
     </string-array>
     <string-array name="currencies">
         <item>CAD</item>
@@ -40,5 +41,19 @@
 
     <string name="title_activity_claim_accept_return">ClaimAcceptReturn</string>
     <string name="title_activity_display_claim_accepted">DisplayClaimAcceptedActivity</string>
+    <string name="from">From:</string>
+    <string name="to">To:</string>
+    <string name="send">Send</string>
+    <string name="accept">Approve</string>
+    <string name="_return">Return</string>
+    <string name="submit">Submit</string>
+    <string name="save">save</string>
+    <string name="description_of_expense">Expense Description:</string>
+    <string name="start_date">Start Date:</string>
+    <string name="end_date">End Date:</string>
+    <string name="category">Category:</string>
+    <string name="description">Description:</string>
+    <string name="date">Date:</string>
+    <string name="amount">Amount:</string>
 
 </resources>

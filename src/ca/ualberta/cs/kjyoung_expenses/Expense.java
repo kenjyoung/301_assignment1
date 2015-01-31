@@ -1,6 +1,7 @@
 package ca.ualberta.cs.kjyoung_expenses;
 
 import java.math.BigDecimal;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
@@ -95,7 +96,9 @@ public class Expense implements Comparable<Expense>{
 	public String toString(){
 		String str= this.getDescription()+"\n";
 		str+="category: "+this.getCategory()+"\n";
-		str+="amount: "+this.getAmount().toString()+" "+this.getCurrency();
+		str+="Amount: "+this.getAmount().toString()+" "+this.getCurrency()+"\n";
+		DateFormat formatter=DateFormat.getDateInstance();
+		str+="Date: "+formatter.format(this.getDate().getTime());
 		return str;
 	}
 	
