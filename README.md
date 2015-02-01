@@ -18,3 +18,12 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>
+
+Sources
+=======
+The ClaimsListController and ClaimsListManager class are modified versions of StudentListController and StudentListManager from https://github.com/abramhindle/student-picker/blob/master/src/ca/softwareprocess/studentpicker/, Jan 25 2015
+A lot of the general structure of the app was also inspired by this app.
+
+The code for loading and saving the claims contained in ClaimsList manager was taken and modified from https://github.com/joshua2ua/lonelyTwitter, Jan 24 2015
+
+The code for emailing a completed claim was taken and modified from http://stackoverflow.com/a/2197841, Jan 30 2015
