@@ -27,3 +27,7 @@ A lot of the general structure of the app was also inspired by this app.
 The code for loading and saving the claims contained in ClaimsList manager was taken and modified from https://github.com/joshua2ua/lonelyTwitter, Jan 24 2015
 
 The code for emailing a completed claim was taken and modified from http://stackoverflow.com/a/2197841, Jan 30 2015
+
+Video Demonstration
+===================
+A video demonstrating the use of this app can be found at: http://youtu.be/b_OtaBC64To
