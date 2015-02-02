@@ -71,30 +71,31 @@
     <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="59.794" y="-212.828" width="79.1" height="8"/>
   </g>
   <g>
-    <rect style="fill: #ffffff" x="-120" y="63" width="195.3" height="28"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-120" y="63" width="195.3" height="28"/>
-    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-22.35" y="82">DisplayClaimActivity</text>
-    <rect style="fill: #ffffff" x="-120" y="91" width="195.3" height="100"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-120" y="91" width="195.3" height="100"/>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="105">#index: int</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="121">#claim: TravelClaim</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="137">#expenseList: listView</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="153">#claimNameText: TextView</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="169">#startDateText: TextView</text>
-    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="185">#endDateText: TextView</text>
-    <rect style="fill: #ffffff" x="-120" y="191" width="195.3" height="8"/>
-    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-120" y="191" width="195.3" height="8"/>
+    <rect style="fill: #ffffff" x="-120" y="63" width="195.3" height="44"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-120" y="63" width="195.3" height="44"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="-22.35" y="79">&lt;&lt;abstract&gt;&gt;</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-22.35" y="98">DisplayClaimActivity</text>
+    <rect style="fill: #ffffff" x="-120" y="107" width="195.3" height="100"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-120" y="107" width="195.3" height="100"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="121">#index: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="137">#claim: TravelClaim</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="153">#expenseList: listView</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="169">#claimNameText: TextView</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="185">#startDateText: TextView</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="201">#endDateText: TextView</text>
+    <rect style="fill: #ffffff" x="-120" y="207" width="195.3" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-120" y="207" width="195.3" height="8"/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="99.344,-184.592 99.344,-81.2476 -22.35,-81.2476 -22.35,61.0194 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="99.344,-184.592 99.344,-81.2476 -22.35,-81.2476 -22.35,60.9979 "/>
     <polygon style="fill: #ffffff" points="107.344,-184.592 99.344,-200.592 91.344,-184.592 "/>
     <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="107.344,-184.592 99.344,-200.592 91.344,-184.592 "/>
   </g>
   <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="77.291,131 88,131 88,187 223.137,187 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="90" y="156">Displays</text>
-    <polygon style="fill: #000000" points="153.6,156 153.6,148 161.6,152 "/>
-    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="81.291" y="128"></text>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="77.291,139 88,139 88,187 223.137,187 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="90" y="160">Displays</text>
+    <polygon style="fill: #000000" points="153.6,160 153.6,152 161.6,156 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="81.291" y="136"></text>
     <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="219.137" y="184"></text>
   </g>
   <g>
@@ -133,21 +134,6 @@
     <rect style="fill: #ffffff" x="-101" y="325.5" width="282.25" height="20"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-101" y="325.5" width="282.25" height="20"/>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-97" y="339.5">+sendClick(view:View)</text>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="-22.35,219.245 -22.35,252.251 40.125,252.251 40.125,287.493 "/>
-    <polygon style="fill: #ffffff" points="-14.35,219.245 -22.35,203.245 -30.35,219.245 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-14.35,219.245 -22.35,203.245 -30.35,219.245 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="-22.35,219.227 -22.35,244 -130.3,244 -130.3,352.557 "/>
-    <polygon style="fill: #ffffff" points="-14.35,219.227 -22.35,203.227 -30.35,219.227 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-14.35,219.227 -22.35,203.227 -30.35,219.227 "/>
-  </g>
-  <g>
-    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="-22.35,219.233 -22.35,243.5 -303.75,243.5 -303.75,449.493 "/>
-    <polygon style="fill: #ffffff" points="-14.35,219.233 -22.35,203.233 -30.35,219.233 "/>
-    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-14.35,219.233 -22.35,203.233 -30.35,219.233 "/>
   </g>
   <g>
     <rect style="fill: #ffffff" x="-289" y="-131.5" width="194.8" height="28"/>
@@ -276,5 +262,20 @@
     <rect style="fill: #ffffff" x="461" y="0.5" width="233.3" height="20"/>
     <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="461" y="0.5" width="233.3" height="20"/>
     <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="465" y="14.5">+compareTo(other:Object): int</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-22.35,235.246 -22.35,260.251 40.125,260.251 40.125,287.493 "/>
+    <polygon style="fill: #ffffff" points="-14.35,235.246 -22.35,219.246 -30.35,235.246 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-14.35,235.246 -22.35,219.246 -30.35,235.246 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-22.35,235.239 -22.35,260 -130.3,260 -130.3,352.505 "/>
+    <polygon style="fill: #ffffff" points="-14.35,235.239 -22.35,219.239 -30.35,235.239 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-14.35,235.239 -22.35,219.239 -30.35,235.239 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-22.35,235.239 -22.35,260 -303.75,260 -303.75,449.502 "/>
+    <polygon style="fill: #ffffff" points="-14.35,235.239 -22.35,219.239 -30.35,235.239 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-14.35,235.239 -22.35,219.239 -30.35,235.239 "/>
   </g>
 </svg>
