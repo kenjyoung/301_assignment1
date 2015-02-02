@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="78cm" height="42cm" viewBox="-452 -251 1549 837" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="225" y="81" width="325.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="225" y="81" width="325.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="387.85" y="100">TravelClaim</text>
+    <rect style="fill: #ffffff" x="225" y="109" width="325.7" height="84"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="225" y="109" width="325.7" height="84"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="229" y="123">-startDate: GregorianCalendar</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="229" y="139">-endDate: GregorianCalendar</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="229" y="155">-description: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="229" y="171">-status: Byte</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="229" y="187">-expenses: ArrayList&lt;Expense&gt;</text>
+    <rect style="fill: #ffffff" x="225" y="193" width="325.7" height="100"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="225" y="193" width="325.7" height="100"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="229" y="207">+updateInfo(startDate:Date,endDate:Date,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="229" y="223">            description:String)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="229" y="239">+updateExpense(index:int,date:Date,): int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="229" y="255">+getTotals(): Map&lt;String,BigDecimal&gt;</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="229" y="271">+addExpense(expense:Expense): int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="229" y="287">+removeExpense(index:int)</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="577.65,40.7453 577.65,58.7513 387.85,58.7513 387.85,78.9934 "/>
+    <polygon style="fill: #ffffff" points="585.65,40.7453 577.65,24.7453 569.65,40.7453 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="585.65,40.7453 577.65,24.7453 569.65,40.7453 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="646" y="131" width="448.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="646" y="131" width="448.9" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="870.45" y="150">Expense</text>
+    <rect style="fill: #ffffff" x="646" y="159" width="448.9" height="116"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="646" y="159" width="448.9" height="116"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="650" y="173">-date: Date</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="650" y="189">-category: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="650" y="205">-description: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="650" y="221">-amount: Decimal</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="650" y="237">-currency: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="650" y="253">-currencies: ArrayList&lt;String&gt;</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="650" y1="258.6" x2="881" y2="258.6"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="650" y="269">-categories: ArrayList&lt;String&gt;</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="650" y1="274.6" x2="881" y2="274.6"/>
+    <rect style="fill: #ffffff" x="646" y="275" width="448.9" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="646" y="275" width="448.9" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="650" y="289">+updateInfo(date:Date,category:String,description:String,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="650" y="305">            amount:BigDecimal,currency:String)</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="577.65,40.7453 577.65,83.7518 870.45,83.7518 870.45,128.994 "/>
+    <polygon style="fill: #ffffff" points="585.65,40.7453 577.65,24.7453 569.65,40.7453 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="585.65,40.7453 577.65,24.7453 569.65,40.7453 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="576.135,187 612.35,187 612.35,221 644.045,221 "/>
+    <polygon style="fill: #000000" points="550.963,187 564.963,182.2 578.963,187 564.963,191.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="550.963,187 564.963,182.2 578.963,187 564.963,191.8 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="614.35" y="201"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="582.963" y="184"> 1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="582.963" y="200"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="640.045" y="218"> 0+</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="640.045" y="234"></text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="59.794" y="-248.828" width="79.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="59.794" y="-248.828" width="79.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="99.344" y="-229.828">Activity</text>
+    <rect style="fill: #ffffff" x="59.794" y="-220.828" width="79.1" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="59.794" y="-220.828" width="79.1" height="8"/>
+    <rect style="fill: #ffffff" x="59.794" y="-212.828" width="79.1" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="59.794" y="-212.828" width="79.1" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-120" y="63" width="195.3" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-120" y="63" width="195.3" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-22.35" y="82">DisplayClaimActivity</text>
+    <rect style="fill: #ffffff" x="-120" y="91" width="195.3" height="100"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-120" y="91" width="195.3" height="100"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="105">#index: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="121">#claim: TravelClaim</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="137">#expenseList: listView</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="153">#claimNameText: TextView</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="169">#startDateText: TextView</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-116" y="185">#endDateText: TextView</text>
+    <rect style="fill: #ffffff" x="-120" y="191" width="195.3" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-120" y="191" width="195.3" height="8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="99.344,-184.592 99.344,-81.2476 -22.35,-81.2476 -22.35,61.0194 "/>
+    <polygon style="fill: #ffffff" points="107.344,-184.592 99.344,-200.592 91.344,-184.592 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="107.344,-184.592 99.344,-200.592 91.344,-184.592 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="77.291,131 88,131 88,187 223.137,187 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="90" y="156">Displays</text>
+    <polygon style="fill: #000000" points="153.6,156 153.6,148 161.6,152 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="81.291" y="128"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="219.137" y="184"></text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-450" y="451.5" width="292.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-450" y="451.5" width="292.5" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-303.75" y="470.5">DisplayClaimInProgressActivity</text>
+    <rect style="fill: #ffffff" x="-450" y="479.5" width="292.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-450" y="479.5" width="292.5" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-446" y="493.5">-deleteMode: Boolean</text>
+    <rect style="fill: #ffffff" x="-450" y="499.5" width="292.5" height="84"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-450" y="499.5" width="292.5" height="84"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-446" y="513.5">+editClaim(view:View)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-446" y="529.5">+addExpense(view:View)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-446" y="545.5">+toggleDelete(view:View)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-446" y="561.5">+sendClick(view:View)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-446" y="577.5">+submitClick(view:View)</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-275" y="354.5" width="289.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-275" y="354.5" width="289.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-130.3" y="373.5">DisplayClaimSubmittedActivity</text>
+    <rect style="fill: #ffffff" x="-275" y="382.5" width="289.4" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-275" y="382.5" width="289.4" height="8"/>
+    <rect style="fill: #ffffff" x="-275" y="390.5" width="289.4" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-275" y="390.5" width="289.4" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-271" y="404.5">+acceptClick(view:View)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-271" y="420.5">+returnClick(view:View)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-271" y="436.5">+sendClick(view:View)</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-101" y="289.5" width="282.25" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-101" y="289.5" width="282.25" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="40.125" y="308.5">DisplayClaimApprovedActivity</text>
+    <rect style="fill: #ffffff" x="-101" y="317.5" width="282.25" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-101" y="317.5" width="282.25" height="8"/>
+    <rect style="fill: #ffffff" x="-101" y="325.5" width="282.25" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-101" y="325.5" width="282.25" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-97" y="339.5">+sendClick(view:View)</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="-22.35,219.245 -22.35,252.251 40.125,252.251 40.125,287.493 "/>
+    <polygon style="fill: #ffffff" points="-14.35,219.245 -22.35,203.245 -30.35,219.245 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-14.35,219.245 -22.35,203.245 -30.35,219.245 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="-22.35,219.227 -22.35,244 -130.3,244 -130.3,352.557 "/>
+    <polygon style="fill: #ffffff" points="-14.35,219.227 -22.35,203.227 -30.35,219.227 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-14.35,219.227 -22.35,203.227 -30.35,219.227 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="-22.35,219.233 -22.35,243.5 -303.75,243.5 -303.75,449.493 "/>
+    <polygon style="fill: #ffffff" points="-14.35,219.233 -22.35,203.233 -30.35,219.233 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-14.35,219.233 -22.35,203.233 -30.35,219.233 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-289" y="-131.5" width="194.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-289" y="-131.5" width="194.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-191.6" y="-112.5">MainActivity</text>
+    <rect style="fill: #ffffff" x="-289" y="-103.5" width="194.8" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-289" y="-103.5" width="194.8" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-285" y="-89.5">-claimsList: ListView</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-285" y="-73.5">-deleteMode: Boolean</text>
+    <rect style="fill: #ffffff" x="-289" y="-67.5" width="194.8" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="-289" y="-67.5" width="194.8" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-285" y="-53.5">+addClaim(view:View)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-285" y="-37.5">+toggleDelete(view:View)</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="99.344,-186.592 99.344,-81.5 -92.2095,-81.5 "/>
+    <polygon style="fill: #ffffff" points="107.344,-186.592 99.344,-202.592 91.344,-186.592 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="107.344,-186.592 99.344,-202.592 91.344,-186.592 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="119" y="-148.5" width="210.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="119" y="-148.5" width="210.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="224.1" y="-129.5">EditClaimActivity</text>
+    <rect style="fill: #ffffff" x="119" y="-120.5" width="210.2" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="119" y="-120.5" width="210.2" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="123" y="-106.5">-startDP: DatePicker</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="123" y="-90.5">-EndDP: DatePicker</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="123" y="-74.5">-descriptionText: EditText</text>
+    <rect style="fill: #ffffff" x="119" y="-68.5" width="210.2" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="119" y="-68.5" width="210.2" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="123" y="-54.5">+saveClaim()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="123" y="-38.5">+saveClick(view:View)</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="99.344,-186.592 99.344,-172.5 224.1,-172.5 224.1,-150.499 "/>
+    <polygon style="fill: #ffffff" points="107.344,-186.592 99.344,-202.592 91.344,-186.592 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="107.344,-186.592 99.344,-202.592 91.344,-186.592 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="750" y="-157.5" width="210.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="750" y="-157.5" width="210.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="855.1" y="-138.5">EditExpenseActivity</text>
+    <rect style="fill: #ffffff" x="750" y="-129.5" width="210.2" height="116"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="750" y="-129.5" width="210.2" height="116"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="754" y="-115.5">-claimIndex: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="754" y="-99.5">-expenseIndex: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="754" y="-83.5">-datePicker: DatePicker</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="754" y="-67.5">-currencySpinner: Spinner</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="754" y="-51.5">-categorySpinner: Spinner</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="754" y="-35.5">-descriptionText: EditText</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="754" y="-19.5">-amountText: EditText</text>
+    <rect style="fill: #ffffff" x="750" y="-13.5" width="210.2" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="750" y="-13.5" width="210.2" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="754" y="0.5">+saveExpense()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="754" y="16.5">+saveClick(view:View)</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="99.344,-186.592 99.344,-173.164 855.1,-173.164 855.1,-157.5 "/>
+    <polygon style="fill: #ffffff" points="107.344,-186.592 99.344,-202.592 91.344,-186.592 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="107.344,-186.592 99.344,-202.592 91.344,-186.592 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="855.1,24.4879 855.1,56.5028 945.5,56.5028 945.5,127.5 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="900.3" y="53.5028">edits</text>
+    <polygon style="fill: #000000" points="921.55,53.5028 921.55,45.5028 929.55,49.5028 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="859.1" y="36.4879"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="949.5" y="123.5"></text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="224.1,-30.4927 224.1,23.5037 337.5,23.5037 337.5,77.5 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="280.8" y="20.5037">edits</text>
+    <polygon style="fill: #000000" points="302.05,20.5037 302.05,12.5037 310.05,16.5037 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="228.1" y="-18.4927"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="341.5" y="73.5"></text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="186.5" y="386" width="402.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="186.5" y="386" width="402.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="387.85" y="405">ClaimsListController</text>
+    <rect style="fill: #ffffff" x="186.5" y="414" width="402.7" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="186.5" y="414" width="402.7" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="190.5" y="428">-claims: ArrayList&lt;TravelClaims&gt;</text>
+    <rect style="fill: #ffffff" x="186.5" y="434" width="402.7" height="100"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="186.5" y="434" width="402.7" height="100"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="190.5" y="448">+addClaim(claim:TravelClaim)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="190.5" y="464">+deleteClaim(index:int)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="190.5" y="480">+updateClaim(index:int,startDate:Date,endDate:Date,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="190.5" y="496">             description:String)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="190.5" y="512">+sendClaim(index:int)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="190.5" y="528">+saveClaims()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="744.5" y="416" width="341.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="744.5" y="416" width="341.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="915.05" y="435">ClaimsListManager</text>
+    <rect style="fill: #ffffff" x="744.5" y="444" width="341.1" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="744.5" y="444" width="341.1" height="8"/>
+    <rect style="fill: #ffffff" x="744.5" y="452" width="341.1" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="744.5" y="452" width="341.1" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="748.5" y="466">+loadClaims(): ArrayList&lt;TravelClaims&gt;</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="748.5" y="482">+saveClaims(claims:ArrayList&lt;TravelClaims&gt;)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="748.5" y="498">+sendClaim(claim:TravelClaim)</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="387.85,358.819 387.85,368.991 387.85,296.007 387.85,295.007 "/>
+    <polygon style="fill: #ffffff" points="387.85,383.991 383.05,369.991 387.85,355.991 392.65,369.991 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="387.85,383.991 383.05,369.991 387.85,355.991 392.65,369.991 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="389.85" y="329.499"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="398.85" y="379.991">1</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="391.85" y="307.007">0+</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="742.495,460 741.495,460 592.206,460 591.206,460 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="666.85" y="457">interface to OS</text>
+    <polygon style="fill: #000000" points="726.6,457 726.6,449 734.6,453 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="738.495" y="457"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="595.206" y="457"></text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="461" y="-51.5" width="233.3" height="44"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="461" y="-51.5" width="233.3" height="44"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="577.65" y="-35.5">&lt;&lt;interface&gt;&gt;</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="577.65" y="-16.5">Comparable</text>
+    <rect style="fill: #ffffff" x="461" y="-7.5" width="233.3" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="461" y="-7.5" width="233.3" height="8"/>
+    <rect style="fill: #ffffff" x="461" y="0.5" width="233.3" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 4; stroke: #000000" x="461" y="0.5" width="233.3" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="465" y="14.5">+compareTo(other:Object): int</text>
+  </g>
+</svg>
